@@ -1,0 +1,37 @@
+body {
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: Nunito Sans, sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1;
+    font-weight: 700;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.25;
+    font-weight: 400;
+}
+
+aside {
+    border-left: 4px solid #EEEEEE; /* Similar to Markdown blockquote */
+    padding: 5px 10px 5px 10px;
+    margin: 10px 0;
+    background-color: #222222; /* Light gray background */
+    font-style: italic; /* Optional: matches Markdown blockquote style */
+}
+
+a:link {
+    color: #7EF984;
+}
+
+a:visited {
+    color: #EB80D9;
+}
+
+a:hover {
+    color: #FAEC81;
+}

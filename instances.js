@@ -10,6 +10,16 @@ export const instances = {
         },
     },
 
+    "localhost:8000/recur": {
+        url: "http://localhost:8000/recur",
+        name: "recur",
+        admin: "luminousherbs",
+        source: "http://github.com/luminousherbs/recur",
+        edit: function(path) {
+            return `http://github.com/luminousherbs/recur/tree/main/${path}`;
+        },
+    },
+
     "luminousherbs.codeberg.page": {
         url: "http://luminousherbs.codeberg.page",
         name: "Codeberg",

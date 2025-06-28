@@ -2,6 +2,10 @@ console.log(location.pathname);
 
 let input, output;
 
+function fixWidth(el) {
+    el.style.width = el.value.length + "ch";
+}
+
 function removeConsonants(str) {
     return str.replace(/[bcdfghjklmnpqrstvwxyz]/gi, '');
 }

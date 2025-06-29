@@ -9,11 +9,19 @@
     <lastBuildDate>Sun, 29 Jun 2025 10:06:00 +0000</lastBuildDate>
 
     <item>
+      <title>Synthony</title>
+      <link>https://luminousherbs.github.io/music/synthony</link>
+      <description>by luminousherbs</description>
+      <pubDate>Fri, 13 Dec 2024 17:30:06 +0000</pubDate>
+      <guid>synthony</guid>
+    </item>
+
+    <item>
       <title>Desert Temple</title>
-      <link>https://luminousherbs.github.io/music/desert-temple/</link>
+      <link>https://luminousherbs.github.io/music/desert-temple</link>
       <description>by luminousherbs</description>
       <pubDate>Sun, 08 Dec 2024 17:00:00 +0000</pubDate>
-      <guid>https://luminousherbs.github.io/music/desert-temple/</guid>
+      <guid>desert-temple</guid>
     </item>
 
   </channel>

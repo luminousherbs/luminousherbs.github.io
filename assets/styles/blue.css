@@ -1,0 +1,202 @@
+body {
+    font-family: Nunito Sans, sans-serif;
+    line-height: 1.5;
+}
+
+@media (prefers-color-scheme: dark) {
+
+    body {
+        color: #EEEEDD;
+        background-color: #111122;
+    }
+
+    header {
+        background-color: #333344;
+    }
+
+    aside {
+        border-color: #DDDDCC;
+        background-color: #444455;
+    }
+
+    section {
+        background-color: #333344;
+    }
+
+    textarea {
+        background-color: #333344;
+        color: #EEEEDD;
+    }
+
+    th, td {
+        border-color: #EEEEDD;
+    }
+
+    th {
+        background-color: #555566;
+    }
+
+    button:disabled {
+        background-color: #555566;
+        border-color: #111122;
+        color: #BBBBAA;
+    }
+
+    a:link {
+        color: #7EF984;
+    }
+
+    a:visited {
+        color: #EB80D9;
+    }
+
+}
+
+@media (prefers-color-scheme: light) {
+
+    body {
+        color: #111122;
+        background-color: #EEEEDD;
+    }
+
+    header {
+        background-color: #CCCCBB;
+    }
+
+    aside {
+        border-color: #222233;
+        background-color: #BBBBAA;
+    }
+
+    section {
+        background-color: #CCCCBB;
+    }
+
+    textarea {
+        background-color: #CCCCBB;
+        color: #111122;
+    }
+
+    th, td {
+        border-color: #111122;
+    }
+
+    th {
+        background-color: #AAAA99;
+    }
+
+    button:disabled {
+        background-color: #888899;
+        border-color: #666677;
+        color: #BBBBAA;
+        cursor: not-allowed;
+    }
+
+    a:link {
+        color: #5ECE63;
+    }
+
+    a:visited {
+        color: #CD60BB;
+    }
+
+}
+
+
+
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-size: 1.17rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.5em;
+}
+
+header {
+    padding: 0.1em 1em;
+}
+
+
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+
+
+strong {
+    font-weight: 800;
+}
+
+del {
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+}
+
+
+
+aside {
+    border-left: 5px solid;
+    padding: 5px 5px 5px 9px;
+    margin: 5px;
+    font-style: italic;
+}
+
+section {
+    padding: 1px 5px 20px 15px;
+    margin: 5px;
+}
+
+textarea {
+    width: 95%;
+    height: auto;
+}
+
+
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid;
+    padding: 8px;
+    text-align: left;
+}
+
+
+
+button {
+    background-color: #FAEC81;
+    border-color: #C8BD67;
+    border-style: solid;
+    border-width: 2px;
+    color: #111122;
+}
+
+button:disabled {
+    cursor: not-allowed; 
+}
+
+
+
+
+input {
+    font-family: Nunito Sans, sans-serif;
+}
+

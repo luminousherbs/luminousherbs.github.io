@@ -8,7 +8,7 @@ const results = new Map([
 
 
 function getAnswers() {
-    answers = [];
+    const answers = [];
     for (let q of questions.children) {
         try {
             answers.push(q.children[1].children[0].checked);
@@ -17,19 +17,17 @@ function getAnswers() {
     return answers
 }
 
-// define elements
-const questions = document.getElementById("questions");
+// listen for submit
 questions.addEventListener("submit", function(event) {
     event.preventDefault();
     const answers = getAnswers();
     let counter = 0;
-    for (a of answers) {
+    for (let a of answers) {
         answers[counter] = results.get(counter).get(a)
         counter++;
     }
     const template = `You are a ${answers[0]} who ${answers[1]} and ${answers[2]}.`
-    console.log(template);
-    document.getElementById("result").innerText = template;
-    document.getElementById("subresult").innerText = "Don't tie yourself to political ideologies. Think about each isssue individually.";
+    resultField.innerText = template;
+    subresultField.innerText = "Don't tie yourself to political ideologies. Think about each isssue individually.";
 })
 

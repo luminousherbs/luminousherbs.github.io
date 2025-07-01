@@ -33,9 +33,10 @@ window.updateDisplay = updateDisplay;
 function updateAffordable() {
     prices.forEach(function(value, key) {
         if (value > getCoins()) {
-            // console.log(key, document.getElementById(key));
+            // special case where `getElementById` is required
             document.getElementById(key).children[2].firstChild.disabled = true;
         } else {
+            // special case where `getElementById` is required
             document.getElementById(key).children[2].firstChild.disabled = false;
         }
     })

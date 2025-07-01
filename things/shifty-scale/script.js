@@ -36,7 +36,7 @@ const shiftyExplanations = new Map([
     [9, "Don't judge him, his hoodie was surgically attached to him in a freak accident."],
 ])
 
-let fieldTemperature, fieldDoneness, image, imageIndex, submit, answer, explanation;
+let imageIndex;
 
 function flipMap(map) {
     const newMap = new Map();
@@ -90,29 +90,17 @@ function randomPhoto() {
 
 function onSubmit() {
     submit.disabled = true;
-    console.log("Getting explanation");
     answer.innerText = `Correct answer: ${shiftyScores.get(imageIndex)}.`;
     explanation.innerText = shiftyExplanations.get(imageIndex);
     postgame.hidden = false;
 }
 
-// define elements
-fieldDoneness = document.getElementById("field-doneness");
-fieldTemperature = document.getElementById("field-temperature");
-
 fieldDoneness.addEventListener("input", onDonenessInput);
 fieldTemperature.addEventListener("input", onTemperatureInput);
 
-image = document.getElementById("image");
-submit = document.getElementById("submit");
-next = document.getElementById("next");
-answer = document.getElementById("answer");
-explanation = document.getElementById("explanation");
-postgame = document.getElementById("postgame");
 
+// listen to buttons
 submit.addEventListener("click", onSubmit);
 next.addEventListener("click", randomPhoto);
 
-
 randomPhoto();
-

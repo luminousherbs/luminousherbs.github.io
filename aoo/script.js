@@ -1,7 +1,5 @@
 console.log(location.pathname);
 
-let input, output;
-
 function fixWidth(el) {
     el.style.width = el.value.length + "ch";
 }
@@ -38,9 +36,7 @@ function onInput() {
     ))
 }
 
-// define elements
-input = document.getElementById("input");
-output = document.getElementById("output");
+// listen for inputs
 input.addEventListener("input", onInput);
 
 onInput();

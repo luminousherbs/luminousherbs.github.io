@@ -12,19 +12,23 @@ function filterPages() {
         }
     }
     for (const [key, value] of Object.entries(pageTags)) {
+        // special case where `getElementById` is required
         document.getElementById(`link-${key}`).hidden = !allowedPages.has(key);
     }
 }
 window.filterPages = filterPages;
 
 function selectAll(id) {
-   const container = document.getElementById(id);
-   for (let box of container.querySelectorAll("input")) box.checked = true;
-   filterPages();
+    // special case where `getElementById` is required
+    // this could be refactored so we get passed an element instead of an id
+    const container = document.getElementById(id);
+    for (let box of container.querySelectorAll("input")) box.checked = true;
+    filterPages();
 }
 window.selectAll = selectAll;
 
 function selectNone(id) {
+    // special case where `getElementById` is required
     const container = document.getElementById(id);
     for (let box of container.querySelectorAll("input")) box.checked = false;
     filterPages();
@@ -32,6 +36,7 @@ function selectNone(id) {
 window.selectNone = selectNone;
 
 function selectSome(id) {
+    // special case where `getElementById` is required
     const container = document.getElementById(id);
     // Math.random() returns a number between 0 and 1
     // so Math.random() > 0.5 is a 50% chance to be true
@@ -49,6 +54,7 @@ async function getJSON(url) {
 function getFilterChoice(filters) {
     const choices = new Map()
     for (let f of filters) {
+        // special case where `getElementById` is required
         choices.set(f, document.getElementById(`filter-${f}`).checked);
     }
     return choices;
@@ -65,7 +71,6 @@ function getUniqueElementsFromValueArrays(obj) {
 }
 
 function createFilters(filters) {
-    const filterBox = document.getElementById("filter");
     for (let f of filters) {
         filterBox.innerHTML += `<input type="checkbox" id="filter-${f}" onclick="filterPages()" checked>`;
         filterBox.innerHTML += `<label for="filter-${f}">${f}</label><br>`;
@@ -73,7 +78,6 @@ function createFilters(filters) {
 }
 
 function createLinkLayout(tags) {
-    const list = document.getElementById("ul");
     for (const [key, value] of Object.entries(tags)) {
         list.innerHTML += `<li id="link-${key}" style="margin: 20px 0;"><a href="/things/${key}"><strong>${key}</strong></a><br>(${value.join(", ")})`;
     }

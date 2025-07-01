@@ -45,22 +45,18 @@ function sortByTwoKeys(collection, key1, key2) {
     return (objects);
 }
 
-// define elements
-const phoneContainer = document.getElementById("phones");
-const field1 = document.getElementById("select1");
-const field2 = document.getElementById("select2");
-
 // get stats
 let stats;
 getJSON("stats.json").then((res) => {
     stats = res;
-    displaySorted(stats, field1.value, field2.value);
+    displaySorted(stats, dropdown1.value, dropdown2.value);
 })
 
-field1.addEventListener("input", function() {
-    displaySorted(stats, field1.value, field2.value);
+// listen for inputs
+dropdown1.addEventListener("input", function() {
+    displaySorted(stats, dropdown1.value, dropdown2.value);
 })
 
-field2.addEventListener("input", function() {
-    displaySorted(stats, field1.value, field2.value);
+dropdown2.addEventListener("input", function() {
+    displaySorted(stats, dropdown1.value, dropdown2.value);
 })

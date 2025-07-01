@@ -33,10 +33,10 @@ function freeze() {
 window.freeze = freeze;
 
 function freezeClicking() {
+    
     if (clickFrozen) return false;
     
     clickFrozen = true;
-    const freezeClickingButton = document.getElementById("freezeClicking");
     freezeClickingButton.innerText = "Unfreeze clicking";
     freezeClickingButton.disabled = true;
     freezeButton.disabled = true;
@@ -46,7 +46,6 @@ window.freezeClicking = freezeClicking;
 
 function tick() {
     count++;
-    const displayTime = document.getElementById("displayTime");
     displayTime.innerText = `You've been looking at this page for ${count} seconds.`;
 }
 

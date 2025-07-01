@@ -3,7 +3,7 @@ const path = require("path");
 const fs = require("node:fs");
 const http = require("http");
 const { Server } = require("ws");
-const readline = require('readline');
+const readline = require("readline");
 
 const app = express();
 
@@ -24,9 +24,20 @@ const responses = {
 
 wss.on("connection", (ws) => {
     console.log("connected to client");
+    console.log(`there are now ${wss.clients.size} clients`);
     console.log();
     ws.on("message", (message) => {
         console.log("Client:", message.toString());
+        
+        // send to all clients
+        wss.clients.forEach((client) => {
+            if (client.readyState === client.OPEN) {
+                console.log("talking to a client")
+                client.send(message.toString());
+            }
+        });
+
+        /*
 
         const rl = readline.createInterface({
             input: process.stdin,
@@ -37,6 +48,7 @@ wss.on("connection", (ws) => {
             ws.send(answer);
             rl.close();
         });
+        */
 
     });
     ws.on("close", () => {

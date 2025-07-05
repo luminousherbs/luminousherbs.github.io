@@ -182,11 +182,12 @@ th, td {
 
 
 button {
+    color: #000000;
     background-color: #FAEC81;
     border-color: #C8BD67;
     border-style: solid;
     border-width: 2px;
-    color: #000000;
+    cursor: pointer;
 }
 
 button:disabled {

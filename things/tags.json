@@ -2,6 +2,7 @@
     "clock": ["time", "escalation"],
     "appear": ["time", "joke"],
     "disappear": ["time", "escalation"],
+    "color": ["useful", "transformation"],
     "color-detection": ["transformation"],
     "quadratic-solver": ["transformation", "useful", "reversible", "math"],
     "cipher": ["transformation", "useful", "reversible"],

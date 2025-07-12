@@ -20,5 +20,6 @@
     "gamble": ["memory", "money"],
     "magpie-counter": ["transformation", "joke", "reversible"],
     "shifty-scale": ["joke"],
+    "scroll": ["other"],
     "tax": ["escalation", "memory", "money"]
 }

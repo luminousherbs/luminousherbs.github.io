@@ -19,8 +19,13 @@
         div.sticky {
             position: sticky;
             top: 0;
-            background-color: red;
             height: 6rem;
+            width: 0rem;
+        }
+
+        div {
+            height: 6rem;
+            width: 0rem;
         }
     </style>
 
@@ -54,7 +59,11 @@
         <p>Instance: <select id="instanceSelector"></select></p>
     </header>
     <hr>
-    <div id="speedField" class="sticky"></div>
+    <div class="sticky">
+        <div id="speedField" style="background-color: red;"></div>
+        <div id="accelerationField" style="background-color: blue;"></div>
+    </div>
+    
     <br>
     <img src="/assets/images/shifty0.jpg">
     <img src="/assets/images/shifty1.jpg">

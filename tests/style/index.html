@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
     <script src="/assets/scripts/tax.js" type="module" defer></script>
 
     <!-- stylesheet and fonts -->
-    <link rel="stylesheet" href="/assets/styles/default.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
@@ -23,21 +23,20 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/android.png">
 
     <!-- og (mastodon card) -->
-    <meta property="og:title" content="luminousherbs">
+    <meta property="og:title" content="Style">
     <meta property="og:description" content="A website by luminousherbs.">
-    <meta property="og:image" content="https://luminousherbs.github.io/">
-    <meta property="og:url" content="https://luminousherbs.github.io/">
+    <meta property="og:image" content="https://luminousherbs.github.io/things/og.png">
+    <meta property="og:url" content="https://luminousherbs.github.io/things/tests/style/">
     <meta property="og:type" content="website">
     
-    <title>luminousherbs</title>
+    <title>Style</title>
 </head>
 <body>
     <noscript>
         <p>Your ancient browser doesn't support JavaScript. You can download a new one <a href="http://mozilla.org/firefox">here</a>.</p>
     </noscript>
     <header>
-        <h1>luminousherbs</h1>
-        <p>I make things online. Sometimes they're good.</p>
+        <h1>Style</h1>
         <button onclick="edit()">Edit</button>
         <button onclick="share()">Share</button>
         <button onclick="downloadHTML()">Download HTML</button>
@@ -46,16 +45,39 @@
         <p>Instance: <select id="instanceSelector"></select></p>
     </header>
     <hr>
-    <p>Welcome to my website. Here are some of the things on it: </p>
-    <ul>
-        <li><a href="oi/">oi</a>, a <a href="https://todepond.com/lab/login">Login</a> client which only displays the best 19% of the alphabet</li>
-        <li>All the small <a href="things/">things</a> I've made in JavaScript</li>
-        <li>The <a href="tools/">tools</a> I use to make the site</li>
-        <li><a href="music/">Music</a></li>
-        <li><a href="tests/">Tests</a></li>
-        <li>Other <a href="misc/">miscellaneous</a> pages</li>
-    </ul>
+    <select onchange="setTheme(this.value)">
+        <option value="gray">gray</option>
+        <option value="red">red</option>
+        <option value="yellow">yellow</option>
+        <option value="green">green</option>
+        <option value="cyan">cyan</option>
+        <option value="blue">blue</option>
+        <option value="magenta">magenta</option>
+    </select>
+
+    <button>Enabled button</button>
+    <button disabled>Disabled button</button>
+    <br><br>
+    <table>
+        <thead>
+            <tr>
+                <th>data</th>
+                <th>data</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>data</td>
+                <td>data</td>
+            </tr>
+            <tr>
+                <td>data</td>
+                <td>data</td>
+            </tr>
+        </tbody>
+    </table>
+
     <hr>
-    <a href id="source">View source</a>
+    <a href="..">&lt; Tests</a>
 </body>
 </html>

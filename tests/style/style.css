@@ -1,0 +1,356 @@
+:root {
+  --shade-0: #000000;
+  --shade-1: #111111;
+  --shade-2: #222222;
+  --shade-3: #333333;
+  --shade-4: #444444;
+  --shade-5: #555555;
+  --shade-6: #666666;
+  --shade-7: #777777;
+  --shade-8: #888888;
+  --shade-9: #999999;
+  --shade-a: #AAAAAA;
+  --shade-b: #BBBBBB;
+  --shade-c: #CCCCCC;
+  --shade-d: #DDDDDD;
+  --shade-e: #EEEEEE;
+  --shade-f: #FFFFFF;
+}
+
+[data-theme="gray"] {
+  --shade-0: #000000;
+  --shade-1: #111111;
+  --shade-2: #222222;
+  --shade-3: #333333;
+  --shade-4: #444444;
+  --shade-5: #555555;
+  --shade-6: #666666;
+  --shade-7: #777777;
+  --shade-8: #888888;
+  --shade-9: #999999;
+  --shade-a: #AAAAAA;
+  --shade-b: #BBBBBB;
+  --shade-c: #CCCCCC;
+  --shade-d: #DDDDDD;
+  --shade-e: #EEEEEE;
+  --shade-f: #FFFFFF;
+}
+
+[data-theme="red"] {
+  --shade-0: #110000;
+  --shade-1: #221111;
+  --shade-2: #332222;
+  --shade-3: #443333;
+  --shade-4: #554444;
+  --shade-5: #665555;
+  --shade-6: #776666;
+  --shade-7: #887777;
+  --shade-8: #887777;
+  --shade-9: #998888;
+  --shade-a: #AA9999;
+  --shade-b: #BBAAAA;
+  --shade-c: #CCBBBB;
+  --shade-d: #DDCCCC;
+  --shade-e: #EEDDDD;
+  --shade-f: #FFEEEE;
+}
+
+[data-theme="yellow"] {
+  --shade-0: #111100;
+  --shade-1: #222211;
+  --shade-2: #333322;
+  --shade-3: #444433;
+  --shade-4: #555544;
+  --shade-5: #666655;
+  --shade-6: #777766;
+  --shade-7: #888877;
+  --shade-8: #888877;
+  --shade-9: #999988;
+  --shade-a: #AAAA99;
+  --shade-b: #BBBBAA;
+  --shade-c: #CCCCBB;
+  --shade-d: #DDDDCC;
+  --shade-e: #EEEEDD;
+  --shade-f: #FFFFEE;
+}
+
+[data-theme="green"] {
+  --shade-0: #001100;
+  --shade-1: #112211;
+  --shade-2: #223322;
+  --shade-3: #334433;
+  --shade-4: #445544;
+  --shade-5: #556655;
+  --shade-6: #667766;
+  --shade-7: #778877;
+  --shade-8: #778877;
+  --shade-9: #889988;
+  --shade-a: #99AA99;
+  --shade-b: #AABBAA;
+  --shade-c: #BBCCBB;
+  --shade-d: #CCDDCC;
+  --shade-e: #DDEEDD;
+  --shade-f: #EEFFEE;
+}
+
+[data-theme="cyan"] {
+  --shade-0: #001111;
+  --shade-1: #112222;
+  --shade-2: #223333;
+  --shade-3: #334444;
+  --shade-4: #445555;
+  --shade-5: #556666;
+  --shade-6: #667777;
+  --shade-7: #778888;
+  --shade-8: #778888;
+  --shade-9: #889999;
+  --shade-a: #99AAAA;
+  --shade-b: #AABBBB;
+  --shade-c: #BBCCCC;
+  --shade-d: #CCDDDD;
+  --shade-e: #DDEEEE;
+  --shade-f: #EEFFFF;
+}
+
+[data-theme="blue"] {
+  --shade-0: #000011;
+  --shade-1: #111122;
+  --shade-2: #222233;
+  --shade-3: #333344;
+  --shade-4: #444555;
+  --shade-5: #555566;
+  --shade-6: #666677;
+  --shade-7: #777788;
+  --shade-8: #777788;
+  --shade-9: #888899;
+  --shade-a: #9999AA;
+  --shade-b: #AAAABB;
+  --shade-c: #BBBBCC;
+  --shade-d: #CCCCDD;
+  --shade-e: #DDDDEE;
+  --shade-f: #EEEEFF;
+}
+
+[data-theme="magenta"] {
+  --shade-0: #110011;
+  --shade-1: #221122;
+  --shade-2: #332233;
+  --shade-3: #443344;
+  --shade-4: #554555;
+  --shade-5: #665566;
+  --shade-6: #776677;
+  --shade-7: #887788;
+  --shade-8: #887788;
+  --shade-9: #998899;
+  --shade-a: #AA99AA;
+  --shade-b: #BBAABB;
+  --shade-c: #CCBBCC;
+  --shade-d: #DDCCDD;
+  --shade-e: #EEDDEE;
+  --shade-f: #FFEEFF;
+}
+
+body {
+    font-family: Nunito Sans, sans-serif;
+    line-height: 1.5;
+}
+
+header {
+        background-color: var(--shade-2);
+}
+
+@media (prefers-color-scheme: dark) {
+
+    body {
+        color: var(--shade-f);
+        background-color: var(--shade-0);
+    }
+
+    aside {
+        border-color: var(--shade-e);
+        background-color: var(--shade-3);
+    }
+
+    section {
+        background-color: var(--shade-2);
+    }
+
+    textarea {
+        background-color: var(--shade-2);
+        color: var(--shade-f);
+    }
+
+    th, td {
+        border-color: var(--shade-f);
+    }
+
+    th {
+        background-color: var(--shade-4);
+    }
+
+    button:disabled {
+        background-color: var(--shade-4);
+        border-color: var(--shade-0);
+        color: var(--shade-c);
+    }
+
+    a:link {
+        color: #7EF984;
+    }
+
+    a:visited {
+        color: #EB80D9;
+    }
+
+}
+
+@media (prefers-color-scheme: light) {
+
+    body {
+        color: var(--shade-0);
+        background-color: var(--shade-f);
+    }
+
+    header {
+        background-color: var(--shade-d);
+    }
+
+    aside {
+        border-color: var(--shade-1);
+        background-color: var(--shade-c);
+    }
+
+    section {
+        background-color: var(--shade-d);
+    }
+
+    textarea {
+        background-color: var(--shade-d);
+        color: var(--shade-0);
+    }
+
+    th, td {
+        border-color: var(--shade-0);
+    }
+
+    th {
+        background-color: var(--shade-b);
+    }
+
+    button:disabled {
+        background-color: var(--shade-7);
+        border-color: var(--shade-5);
+        color: var(--shade-c);
+        cursor: not-allowed;
+    }
+
+    a:link {
+        color: #5ECE63;
+    }
+
+    a:visited {
+        color: #CD60BB;
+    }
+
+}
+
+
+
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.5em;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-size: 1.17rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.5em;
+}
+
+header {
+    padding: 0.1em 1em;
+}
+
+
+
+p {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+
+
+strong {
+    font-weight: 800;
+}
+
+del {
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+}
+
+
+
+aside {
+    border-left: 5px solid;
+    padding: 5px 5px 5px 9px;
+    margin: 5px;
+    font-style: italic;
+}
+
+section {
+    padding: 1px 5px 20px 15px;
+    margin: 5px;
+}
+
+textarea {
+    width: 95%;
+    height: auto;
+}
+
+
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid;
+    padding: 8px;
+    text-align: left;
+}
+
+
+
+button {
+    color: #000000;
+    background-color: #FAEC81;
+    border-color: #C8BD67;
+    border-style: solid;
+    border-width: 2px;
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed; 
+}
+
+
+
+
+input {
+    font-family: Nunito Sans, sans-serif;
+}
+
+

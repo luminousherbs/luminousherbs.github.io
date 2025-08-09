@@ -1,3 +1,4 @@
+try {
 let count = 0;
 setInterval(function() {
   const binary = count.toString(2).split("");
@@ -13,3 +14,6 @@ setInterval(function() {
   }
   count++;
 }, 1)
+} catch (err) {
+  alert(err)
+}

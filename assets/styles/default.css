@@ -50,6 +50,24 @@ body {
         color: #EB80D9;
     }
 
+    /* TODO: fix flash of green when hovering in firefox */
+
+    .page-card:visited {
+        background-color: #2e222e;
+    }
+
+    .page-card:visited:hover {
+        background-color: #4b3246; 
+    }
+
+    .page-card:link {
+        background-color: #252e22;
+    }
+
+    .page-card:link:hover {
+        background-color: #384b32; 
+    }
+
 }
 
 @media (prefers-color-scheme: light) {
@@ -98,6 +116,24 @@ body {
 
     a:visited {
         color: #CD60BB;
+    }
+
+    /* TODO: fix flash of green when hovering in firefox */
+
+    .page-card:visited {
+        background-color: #efc3ef;
+    }
+
+    .page-card:visited:hover {
+        background-color: #eeb0e1; 
+    }
+
+    .page-card:link {
+        background-color: #c3e7b7;
+    }
+
+    .page-card:link:hover {
+        background-color: #a6d897; 
     }
 
 }
@@ -216,24 +252,6 @@ input {
     border-radius: 8px;
     transition: all 100ms ease;
     flex: 1 1 20em;
-}
-
-/* TODO: fix flash of green when hovering in firefox */
-
-.page-card:visited {
-    background-color: #2e222e;
-}
-
-.page-card:visited:hover {
-    background-color: #4b3246; 
-}
-
-.page-card:link {
-    background-color: #252e22;
-}
-
-.page-card:link:hover {
-    background-color: #384b32; 
 }
 
 .page-card-container {

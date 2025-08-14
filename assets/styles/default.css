@@ -10,10 +10,6 @@ body {
         background-color: #000000;
     }
 
-    header {
-        background-color: #222222;
-    }
-
     aside {
         border-color: #EEEEEE;
         background-color: #333333;
@@ -75,10 +71,6 @@ body {
     body {
         color: #000000;
         background-color: #FFFFFF;
-    }
-
-    header {
-        background-color: #DDDDDD;
     }
 
     aside {
@@ -166,12 +158,6 @@ h3 {
     line-height: 1;
     margin-bottom: 0.5em;
 }
-
-header {
-    padding: 0.1em 1em;
-    margin-top: 2em;
-}
-
 
 
 p {

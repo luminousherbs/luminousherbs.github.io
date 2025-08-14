@@ -211,17 +211,29 @@ input {
 .page-card {
     display: inline-block;
     text-decoration: none;
-    color: inherit;
-    background-color: #222222;
     padding: 0.1em 1em;
     width: 50%;
     border-radius: 8px;
     transition: all 100ms ease;
-    flex: 1 1 200px;
+    flex: 1 1 20em;
 }
 
-.page-card:hover {
-    background-color: #333333;
+/* TODO: fix flash of green when hovering in firefox */
+
+.page-card:visited {
+    background-color: #2e222e;
+}
+
+.page-card:visited:hover {
+    background-color: #4b3246; 
+}
+
+.page-card:link {
+    background-color: #252e22;
+}
+
+.page-card:link:hover {
+    background-color: #384b32; 
 }
 
 .page-card-container {

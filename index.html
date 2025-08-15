@@ -35,16 +35,28 @@
     <noscript>
         <p>Your ancient browser doesn't support JavaScript. You can download a new one <a href="http://mozilla.org/firefox">here</a>.</p>
     </noscript>
-    <header>
-        <h1>luminousherbs</h1>
-        <p>I make things online. Sometimes they're good.</p>
-        <!-- TODO: move to icon in corner or similar -->
-        <!-- <button onclick="edit()">Edit</button>
-        <button onclick="share()">Share</button>
-        <button onclick="downloadHTML()">Download HTML</button>
-        <button onclick="downloadJavaScript()">Download JavaScript</button>
+    <header class="site-header">
+    <div class="header-content">
+        <div class="header-text">
+            <h1>luminousherbs</h1>
+            <p>I make things online. Sometimes they're good.</p>
+        </div>
+        <div class="dropdown" id="dropdown">
+            <img src="/assets/favicons/default-32x32.png" class="header-img" alt="Tools" id="tools">
+            <div id="dropdownContent" class="dropdown-content">
+            <button onclick="edit()">Edit</button>
+            <br>
+            <button onclick="share()">Share</button>
+            <br>
+            <button onclick="downloadHTML()">Download HTML</button>
+            <br>
+            <button onclick="downloadJavaScript()">Download JavaScript</button>
+        </div>
+        </div>
+        
+    </div>
         <br>
-        <p>Instance: <select id="instanceSelector"></select></p> -->
+        <!-- <p>Instance: <select id="instanceSelector"></select></p> -->
     </header>
     <hr>
     <div class="page-card-container">

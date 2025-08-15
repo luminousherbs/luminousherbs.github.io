@@ -5,11 +5,17 @@ document.querySelector("form").addEventListener("submit", function(e) {
     const userPageName = e.target.pageName.value;
     const userPagePath = e.target.pagePath.value;
     const userParentTitle = e.target.parentTitle.value;
+    const userPageDescription = e.target.pageDescription.value;
 
     fetch("/tools/create-page/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ pagePath: userPagePath, pageName: userPageName, parentTitle: userParentTitle }),
+        body: JSON.stringify({
+            pagePath: userPagePath,
+            pageName: userPageName,
+            pageDescription: userPageDescription,
+            parentTitle: userParentTitle,
+        }),
     })
     
     .then(res => {

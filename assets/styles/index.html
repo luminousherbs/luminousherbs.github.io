@@ -32,20 +32,33 @@
     <title>Styles</title>
 </head>
 <body>
-    <noscript>
-        <p>Your ancient browser doesn't support JavaScript. You can download a new one <a href="http://mozilla.org/firefox">here</a>.</p>
-    </noscript>
-    <header>
-        <h1>Styles</h1>
-        <button onclick="edit()">Edit</button>
-        <button onclick="share()">Share</button>
-        <button onclick="downloadHTML()">Download HTML</button>
-        <button onclick="downloadJavaScript()">Download JavaScript</button>
-        <br>
-        <p>Instance: <select id="instanceSelector"></select></p>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Styles</h1>
+                <p><strong>Written in plain CSS.</strong></p>
+                <noscript>
+                    <p>Your ancient browser doesn't support JavaScript. You can download a new one <a href="http://mozilla.org/firefox">here</a>.</p>
+                </noscript>
+            </div>
+            <div class="dropdown" id="dropdown">
+                <img src="/assets/favicons/android.png" class="header-img" alt="Tools" id="tools">
+                <div id="dropdownContent" class="dropdown-content">
+                    <button onclick="edit()">Edit</button>
+                    <br>
+                    <button onclick="share()">Share</button>
+                    <br>
+                    <button onclick="downloadHTML()">Download HTML</button>
+                    <br>
+                    <button onclick="downloadJavaScript()">Download JavaScript</button>
+                    <br>
+                    <select id="instanceSelector"></select>
+                    <br><br> <!-- extra padding to stop the cursor overshooting-->
+                </div>
+            </div>
+        </div>
     </header>
     <hr>
-    <p>I use CSS to control how my website looks.</p>
     <input id="sheetField" value="default.css">
     <hr>
     <a href="..">&lt; Assets</a>

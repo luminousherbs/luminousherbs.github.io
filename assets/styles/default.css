@@ -257,6 +257,7 @@ input {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: -0.5em
 }
 
 .header-text {

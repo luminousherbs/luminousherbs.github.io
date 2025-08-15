@@ -216,7 +216,13 @@ button {
     border-color: #C8BD67;
     border-style: solid;
     border-width: 2px;
+    border-radius: 3px;
     cursor: pointer;
+    transition: all 100ms ease;
+}
+
+button:enabled:hover {
+    background-color: #fff7bb;
 }
 
 button:disabled {

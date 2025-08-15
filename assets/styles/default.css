@@ -292,7 +292,7 @@ input {
     position: absolute;
     overflow: hidden;
     top: 50px;
-    left: 1em;
+    right: 0;
     padding-top: 1em;
     transition: all 100ms ease;
 }

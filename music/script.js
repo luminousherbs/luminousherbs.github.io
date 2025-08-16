@@ -5,7 +5,7 @@ function createItem(item) {
 
     const card = document.createElement("a");
     card.className = "page-card";
-    card.href = `/music/${item.querySelector("guid").textContent}/song.m4a`;
+    card.href = `${item.querySelector("guid").textContent}/song.m4a`;
     card.download = item.querySelector("guid").textContent;
 
     const title = document.createElement("h2");
@@ -17,7 +17,7 @@ function createItem(item) {
     
     const audio = document.createElement("audio");
     audio.controls = true;
-    audio.src = `/music/${item.querySelector("guid").textContent}/song.m4a`;
+    audio.src = `${item.querySelector("guid").textContent}/song.m4a`;
 
     const br = document.createElement("br");
 

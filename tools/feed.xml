@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+  
+    <title>Tools by luminousherbs</title>
+    <link>https://luminousherbs.github.io/tools</link>
+    <description>Build the site on the site.</description>
+    <language>en</language>
+    <lastBuildDate>Mon, 18 Aug 2025 17:14:00 +0100</lastBuildDate>
+
+    <item>
+      <title>Create Page</title>
+      <link>https://luminousherbs.github.io/tools/create-page</link>
+      <description>No more copy-paste.</description>
+      <pubDate>Mon, 18 Aug 2025 17:14:00 +0100</pubDate>
+      <guid>create-page</guid>
+    </item>
+
+    <item>
+      <title>Kill Server</title>
+      <link>https://luminousherbs.github.io/tools/kill-server</link>
+      <description>Anyone can.</description>
+      <pubDate>Mon, 18 Aug 2025 17:14:00 +0100</pubDate>
+      <guid>kill-server</guid>
+    </item>
+
+  </channel>
+</rss>

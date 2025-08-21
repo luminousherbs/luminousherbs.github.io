@@ -40,3 +40,13 @@ export async function parseFeed(category, showDescription = true, showDate = fal
     });
 
 }
+
+export function createFeed(feed) {
+    // given a <div>, render a feed inside it
+    parseFeed(".").then((xml) => {
+        xml.forEach((card) => {
+            feed.appendChild(card);
+            feed.appendChild(document.createElement("br"));
+        })
+    })
+}

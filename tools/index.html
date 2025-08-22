@@ -32,24 +32,35 @@
     <title>Tools</title>
 </head>
 <body>
-    <noscript>
-        <p>Your ancient browser doesn't support JavaScript. You can download a new one <a href="http://mozilla.org/firefox">here</a>.</p>
-    </noscript>
-    <header>
-        <h1>Tools</h1>
-        <button onclick="edit()">Edit</button>
-        <button onclick="share()">Share</button>
-        <button onclick="downloadHTML()">Download HTML</button>
-        <button onclick="downloadJavaScript()">Download JavaScript</button>
-        <br>
-        <p>Instance: <select id="instanceSelector"></select></p>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Tools</h1>
+                <p><strong>Build the site on the site.</strong></p>
+                <noscript>
+                    <p>Your ancient browser doesn't support JavaScript. You can download a new one <a href="http://mozilla.org/firefox">here</a>.</p>
+                </noscript>
+            </div>
+            <div class="dropdown" id="dropdown">
+                <img src="/assets/favicons/android.png" class="header-img" alt="Tools" id="tools">
+                <div id="dropdownContent" class="dropdown-content">
+                    <button onclick="edit()">Edit</button>
+                    <br>
+                    <button onclick="share()">Share</button>
+                    <br>
+                    <button onclick="downloadHTML()">Download HTML</button>
+                    <br>
+                    <button onclick="downloadJavaScript()">Download JavaScript</button>
+                    <br>
+                    <select id="instanceSelector"></select>
+                    <br><br> <!-- extra padding to stop the cursor overshooting-->
+                </div>
+            </div>
+        </div>
     </header>
     <hr>
     <p>Here are the tools I use to make my website. They only work if you're serving locally from <a href="serve.js">serve.js</a>.</p>
-    <ul>
-        <li><a href="create-page/">Page creator</a></li>
-        <li><a href="kill-server/">Kill server</a></li>
-    </ul>
+    <div id="feed" class="page-card-container"></div>
     <hr>
     <a href="..">&lt; luminousherbs</a>
 </body>

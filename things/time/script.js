@@ -8,7 +8,6 @@ changeColor();
 
 setInterval(function () {
     const binary = count.toString(2).split("");
-    console.log(binary);
     let index = 0;
     for (let b of binary) {
         if (!document.getElementById(`div-${index}`)) {
@@ -29,3 +28,4 @@ setInterval(function () {
 function changeColor() {
     colors.on = picker.value;
 }
+window.changeColor = changeColor;

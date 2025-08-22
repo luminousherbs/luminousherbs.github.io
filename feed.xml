@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+  
+    <title>luminousherbs</title>
+    <link>https://luminousherbs.github.io</link>
+    <description>I make things online. Sometimes they're good.</description>
+    <language>en</language>
+    <lastBuildDate>Mon, 18 Aug 2025 17:14:00 +0100</lastBuildDate>
+
+    <item>
+      <title>Things</title>
+      <link>https://luminousherbs.github.io/things</link>
+      <description>Various small toys, in JavaScript and HTML</description>
+      <pubDate>Sun, 09 Feb 2025 13:20:00 +0000</pubDate>
+      <guid>things</guid>
+    </item>
+
+    <item>
+      <title>Music</title>
+      <link>https://luminousherbs.github.io/music</link>
+      <description>I make music sometimes.</description>
+      <pubDate>Sun, 09 Feb 2025 13:20:00 +0000</pubDate>
+      <guid>music</guid>
+    </item>
+
+    <item>
+      <title>Miscellaneous</title>
+      <link>https://luminousherbs.github.io/music</link>
+      <description>by luminousherbs</description>
+      <pubDate>Sun, 09 Feb 2025 13:20:00 +0000</pubDate>
+      <guid>misc</guid>
+    </item>
+
+    <item>
+      <title>Tools</title>
+      <link>https://luminousherbs.github.io/tools</link>
+      <description>Build the site on the site.</description>
+      <pubDate>Sun, 09 Feb 2025 13:20:00 +0000</pubDate>
+      <guid>tools</guid>
+    </item>
+
+  </channel>
+</rss>

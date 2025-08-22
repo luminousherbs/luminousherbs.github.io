@@ -1,5 +1,1 @@
 console.log(location.pathname);
-
-
-    
-}

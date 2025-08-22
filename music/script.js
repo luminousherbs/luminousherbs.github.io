@@ -3,7 +3,10 @@ console.log(location.pathname);
 
 function createItem(item) {
 
-    const container = document.createElement("aside");
+    const card = document.createElement("a");
+    card.className = "page-card";
+    card.href = `${item.querySelector("guid").textContent}/song.m4a`;
+    card.download = item.querySelector("guid").textContent;
 
     const title = document.createElement("h2");
     title.innerText = item.querySelector("title").textContent;
@@ -14,14 +17,14 @@ function createItem(item) {
     
     const audio = document.createElement("audio");
     audio.controls = true;
-    audio.src = `/music/${item.querySelector("guid").textContent}/song.m4a`;
+    audio.src = `${item.querySelector("guid").textContent}/song.m4a`;
 
     const br = document.createElement("br");
 
-    container.appendChild(title);
-    container.appendChild(date);
-    container.appendChild(audio);
-    feed.appendChild(container);
+    card.appendChild(title);
+    card.appendChild(date);
+    card.appendChild(audio);
+    feed.appendChild(card);
     feed.appendChild(br);
 
 }

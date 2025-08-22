@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
     <script src="/assets/scripts/toolbar.js" type="module" defer></script>
     <script src="/assets/scripts/tax.js" type="module" defer></script>
 
-    <!-- stylesheet and fonts -->
+    <!-- fonts don't matter -->
     <link rel="stylesheet" href="/assets/styles/default.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,10 +23,10 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/android.png">
 
     <!-- og (mastodon card) -->
-    <meta property="og:title" content="{page_name}">
+    <meta property="og:title" content="luminousherbs">
     <meta property="og:description" content="A website by luminousherbs.">
     <meta property="og:image" content="https://luminousherbs.github.io/things/og.png">
-    <meta property="og:url" content="https://luminousherbs.github.io/things/{file_name}">
+    <meta property="og:url" content="https://luminousherbs.github.io/{file_name}">
     <meta property="og:type" content="website">
     
     <title>{page_name}</title>
@@ -35,17 +35,34 @@
     <noscript>
         <p>Your ancient browser doesn't support JavaScript. You can download a new one <a href="http://mozilla.org/firefox">here</a>.</p>
     </noscript>
-    <header>
-        <h1>{page_name}</h1>
-        <button onclick="edit()">Edit</button>
-        <button onclick="share()">Share</button>
-        <button onclick="downloadHTML()">Download HTML</button>
-        <button onclick="downloadJavaScript()">Download JavaScript</button>
-        <br>
-        <p>Instance: <select id="instanceSelector"></select></p>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="header-text">
+                <h1>{page_title}</h1>
+                <p><strong>{page_description}</strong></p>
+                <noscript>
+                    <p>Your ancient browser doesn't support JavaScript. You can download a new one <a href="http://mozilla.org/firefox">here</a>.</p>
+                </noscript>
+            </div>
+            <div class="dropdown" id="dropdown">
+                <img src="/assets/favicons/android.png" class="header-img" alt="Tools" id="tools">
+                <div id="dropdownContent" class="dropdown-content">
+                    <button onclick="edit()">Edit</button>
+                    <br>
+                    <button onclick="share()">Share</button>
+                    <br>
+                    <button onclick="downloadHTML()">Download HTML</button>
+                    <br>
+                    <button onclick="downloadJavaScript()">Download JavaScript</button>
+                    <br>
+                    <select id="instanceSelector"></select>
+                    <br><br> <!-- extra padding to stop the cursor overshooting-->
+                </div>
+            </div>
+        </div>
     </header>
     <hr>
     <hr>
-    <a href="..">&lt; {parent_name}</a>
+    <a href="..">{parent_name}</a>
 </body>
 </html>

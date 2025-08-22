@@ -6,13 +6,17 @@ const app = express();
 app.use(express.json()); // parse json
 app.use(express.static(path.join(__dirname, "../"))); // serve from root
 
-function createPage(pagePath, pageName, parentTitle) {
+function createPage(pagePath, pageName, pageDescription, parentTitle) {
 
     if (fs.existsSync(pagePath)) throw new Error(`File /${pagePath} already exists.`);
 
     // i hate async so we're only using sync
     let htmlTemplate = fs.readFileSync("tools/templates/index.html", "utf-8");
-    htmlTemplate = htmlTemplate.replaceAll("{page_name}", pageName).replaceAll("{file_name}", pagePath).replaceAll("{parent_name}", parentTitle);
+    htmlTemplate = htmlTemplate
+        .replaceAll("{page_name}", pageName)
+        .replaceAll("{file_name}", pagePath)
+        .replaceAll("{parent_name}", parentTitle)
+        .replaceAll("{page_description}", pageDescription);
 
     let jsTemplate = fs.readFileSync("tools/templates/script.js", "utf-8");
     jsTemplate = jsTemplate.replaceAll("{page_name}", pageName).replaceAll("{file_name}", pagePath);
@@ -30,7 +34,7 @@ app.post("/tools/create-page/", (req, res) => {
     console.log(`Received request to create ${req.body.pageName} at /${req.body.pagePath} as a child of ${req.body.parentTitle}`);
 
     try {
-        createPage(req.body.pagePath, req.body.pageName, req.body.parentTitle);
+        createPage(req.body.pagePath, req.body.pageName, req.body.pageDescription, req.body.parentTitle);
         res.status(200).send({ok: true}); 
         res.end();
         console.log(`Successfully created ${req.body.pageName} at /${req.body.pagePath}`)

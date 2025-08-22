@@ -23,31 +23,46 @@
     <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/android.png">
 
     <!-- og (mastodon card) -->
-    <meta property="og:title" content="Page Creator">
+    <meta property="og:title" content="Create Page">
     <meta property="og:description" content="A website by luminousherbs.">
     <meta property="og:image" content="https://luminousherbs.github.io/things/og.png">
     <meta property="og:url" content="https://luminousherbs.github.io/things/create-page">
     <meta property="og:type" content="website">
     
-    <title>Page Creator</title>
+    <title>Create Page</title>
 </head>
 <body>
-    <noscript>
-        <p>Your ancient browser doesn't support JavaScript. You can download a new one <a href="http://mozilla.org/firefox">here</a>.</p>
-    </noscript>
-    <header>
-        <h1>Page Creator</h1>
-        <button onclick="edit()">Edit</button>
-        <button onclick="share()">Share</button>
-        <button onclick="downloadHTML()">Download HTML</button>
-        <button onclick="downloadJavaScript()">Download JavaScript</button>
-        <br>
-        <p>Instance: <select id="instanceSelector"></select></p>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Create Page</h1>
+                <p><strong>No more copy-paste.</strong></p>
+                <noscript>
+                    <p>Your ancient browser doesn't support JavaScript. You can download a new one <a href="http://mozilla.org/firefox">here</a>.</p>
+                </noscript>
+            </div>
+            <div class="dropdown" id="dropdown">
+                <img src="/assets/favicons/android.png" class="header-img" alt="Tools" id="tools">
+                <div id="dropdownContent" class="dropdown-content">
+                    <button onclick="edit()">Edit</button>
+                    <br>
+                    <button onclick="share()">Share</button>
+                    <br>
+                    <button onclick="downloadHTML()">Download HTML</button>
+                    <br>
+                    <button onclick="downloadJavaScript()">Download JavaScript</button>
+                    <br>
+                    <select id="instanceSelector"></select>
+                    <br><br> <!-- extra padding to stop the cursor overshooting-->
+                </div>
+            </div>
+        </div>
     </header>
     <hr>
-    <p>You can use this page to create a new page on the site. You must be serving locally from /tools/serve.js.</p>
     <form>
         <input type="text" placeholder="Page Title" name="pageName">
+        <br>
+        <input type="text" placeholder="Page description" name="pageDescription">
         <br>
         <input type="text" placeholder="Parent Title" name="parentTitle">
         <br>

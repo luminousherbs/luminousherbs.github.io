@@ -32,20 +32,33 @@
     <title>Things</title>
 </head>
 <body>
-    <header>
-        <h1>Things</h1>
-        <button onclick="edit()">Edit</button>
-        <button onclick="share()">Share</button>
-        <button onclick="downloadHTML()">Download HTML</button>
-        <button onclick="downloadJavaScript()">Download JavaScript</button>
-        <br>
-        <p>Instance: <select id="instanceSelector"></select></p>
+    <header class="site-header">
+        <div class="header-content">
+            <div class="header-text">
+                <h1>Things</h1>
+                <p><strong>Various small toys, in JavaScript and HTML.</strong></p>
+                <noscript>
+                    <p>Your ancient browser doesn't support JavaScript. You can download a new one <a href="http://mozilla.org/firefox">here</a>.</p>
+                </noscript>
+            </div>
+            <div class="dropdown" id="dropdown">
+                <img src="/assets/favicons/android.png" class="header-img" alt="Tools" id="tools">
+                <div id="dropdownContent" class="dropdown-content">
+                    <button onclick="edit()">Edit</button>
+                    <br>
+                    <button onclick="share()">Share</button>
+                    <br>
+                    <button onclick="downloadHTML()">Download HTML</button>
+                    <br>
+                    <button onclick="downloadJavaScript()">Download JavaScript</button>
+                    <br>
+                    <select id="instanceSelector"></select>
+                    <br><br> <!-- extra padding to stop the cursor overshooting-->
+                </div>
+            </div>
+        </div>
     </header>
-    <noscript>
-        <p>Your ancient browser doesn't support JavaScript. You can download a new one <a href="http://mozilla.org/firefox">here</a>.</p>
-    </noscript>
     <hr>
-    <p>Here are all the things I've made in JavaScript.</p>
     <details id="filterBox">
         <summary>Filter</summary>
         <button onclick="selectAll('filterBox')">Select all</button>
@@ -53,7 +66,9 @@
         <button onclick="selectSome('filterBox')">Select some</button>
         <br>
     </details>
-    <ul id="list"></ul>
+    <br>
+    <!-- <ul id="list"></ul> -->
+     <div id="feed" class="page-card-container"></div>
     <hr>
     <a href="/">&lt; luminousherbs</a>
 </body>

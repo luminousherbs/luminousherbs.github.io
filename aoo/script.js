@@ -34,7 +34,6 @@ function onInput() {
     fixWidth(input);
     getMastodonPost(input.value).then((res) => {
         output.innerHTML = `${removeConsonants(res.author)}<br>${removeConsonants(res.content)}`;
-        alert(output.innerHTML);
     })
 }
 

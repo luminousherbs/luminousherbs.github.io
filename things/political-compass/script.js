@@ -1,4 +1,5 @@
-alert("script2.js")
+alert("script3.js")
+/*
 // Catch runtime JS errors
 window.onerror = function (message, source, lineno, colno, error) {
   alert(`Error: ${message}\nSource: ${source}\nLine: ${lineno}, Column: ${colno}\nStack: ${error?.stack}`);
@@ -16,8 +17,10 @@ window.addEventListener('error', function (event) {
 window.addEventListener('unhandledrejection', function (event) {
   alert(`Unhandled Promise Rejection: ${event.reason}`);
 });
-
-import { questions } from "./questions";
+*/
+import { questions } from "./questions.js";
+alert("after import")
+alert(questions.toString())
 console.log(location.pathname);
 
 function createQuestion(details) {

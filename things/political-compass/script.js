@@ -1,5 +1,4 @@
-alert("script.js")
-/*
+alert("script2.js")
 // Catch runtime JS errors
 window.onerror = function (message, source, lineno, colno, error) {
   alert(`Error: ${message}\nSource: ${source}\nLine: ${lineno}, Column: ${colno}\nStack: ${error?.stack}`);
@@ -18,9 +17,7 @@ window.addEventListener('unhandledrejection', function (event) {
   alert(`Unhandled Promise Rejection: ${event.reason}`);
 });
 
-import { questions } from "./questions.js";
-try {
-
+import { questions } from "./questions";
 console.log(location.pathname);
 
 function createQuestion(details) {
@@ -36,8 +33,3 @@ const userScores = {
 for (let q of questions) {
   createQuestion(q);
 }
-
-} catch (err) {
-  alert(err);
-}
-*/

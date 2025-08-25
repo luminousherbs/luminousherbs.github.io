@@ -1,7 +1,6 @@
 alert("script.js")
-try {
-
 import { questions } from "questions.js";
+try {
 
 console.log(location.pathname);
 

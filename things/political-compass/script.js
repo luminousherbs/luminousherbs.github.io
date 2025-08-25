@@ -25,6 +25,20 @@ console.log(location.pathname);
 
 function createQuestion(details) {
   alert("creating " + details.question);
+  const heading = document.createElement("h2");
+  heading.textContent = details.question;
+  questionSpace.appendChild(heading);
+  for (let o of details.options) {
+    const card = document.createElement("button");
+    const image = document.createElement("img");
+    image.src = o.image;
+    card.appendChild(image);
+    card.innerText += o.title
+    card.addEventListener("onclick"), function() {
+      alert(o.scores.cool, o.scores.mysterious, o.scores.musical)
+    })
+    questionSpace.appendChild(card);
+  }
 }
 
 const userScores = {

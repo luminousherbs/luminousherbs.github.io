@@ -1,4 +1,5 @@
 alert("script.js")
+/*
 // Catch runtime JS errors
 window.onerror = function (message, source, lineno, colno, error) {
   alert(`Error: ${message}\nSource: ${source}\nLine: ${lineno}, Column: ${colno}\nStack: ${error?.stack}`);
@@ -39,3 +40,4 @@ for (let q of questions) {
 } catch (err) {
   alert(err);
 }
+*/

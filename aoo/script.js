@@ -5,6 +5,7 @@ function fixWidth(el) {
 }
 
 function removeConsonants(str) {
+    return str;
     return str.replace(/[bcdfghjklmnpqrstvwxyz]/gi, '');
 }
 

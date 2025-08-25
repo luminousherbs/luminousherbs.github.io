@@ -1,6 +1,13 @@
+alert("script.js")
+try {
+
 import { questions } from "questions.js";
 
 console.log(location.pathname);
+
+function createQuestion(details) {
+  alert("creating " + details.question);
+}
 
 const userScores = {
   cool: 0,
@@ -9,5 +16,9 @@ const userScores = {
 };
 
 for (let q of questions) {
-  alert(q.question)
+  createQuestion(q);
+}
+
+} catch (err) {
+  alert(err);
 }

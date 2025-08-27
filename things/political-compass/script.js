@@ -1,4 +1,4 @@
-alert("12:20")
+alert("12:23")
 
 import { questions } from "./questions.js";
 
@@ -30,7 +30,11 @@ function createQuestion(details) {
         userScores[key] += value;
       }
       questionIndex++;
+      try {
       createQuestion(questions[questionIndex]);
+      } catch (err) {
+        alert(err)
+      }
       alert("cool " + userScores.cool);
       alert("mysterious " + userScores.mysterious);
       alert("musical " + userScores.musical);

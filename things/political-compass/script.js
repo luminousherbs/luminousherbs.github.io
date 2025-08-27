@@ -1,10 +1,11 @@
-alert("9:38")
+alert("9:42")
 
 import { questions } from "./questions.js";
 
 console.log(location.pathname);
 
 const questionSpace = document.getElementById("questionSpace")
+alert(questionSpace)
 
 function createQuestion(details) {
   alert("create question")

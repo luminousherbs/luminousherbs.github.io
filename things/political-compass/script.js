@@ -1,4 +1,4 @@
-alert("10:12")
+alert("10:19")
 
 import { questions } from "./questions.js";
 
@@ -39,4 +39,4 @@ const userScores = {
 };
 
 const questionIndex = 0;
-createQuestion(questionIndex);
+createQuestion(questions[questionIndex]);

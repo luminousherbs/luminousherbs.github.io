@@ -24,7 +24,7 @@ function createQuestion(details) {
     card.innerText += o.title
     card.onclick = function() {
       alert(o.scores.cool, o.scores.mysterious, o.scores.musical)
-    })
+    }
     questionSpace.appendChild(card);
   }
   alert("appending")

@@ -1,4 +1,4 @@
-alert("9:29")
+alert("9:33")
 
 import { questions } from "./questions.js";
 
@@ -6,6 +6,8 @@ console.log(location.pathname);
 
 function createQuestion(details) {
   alert("create question")
+  alert(questionSpace)
+  alert(questionSpace?.remove)
   // delete the container to clear the previous question
   questionSpace.remove();
   alert("removed")

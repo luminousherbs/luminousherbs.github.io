@@ -1,8 +1,10 @@
-alert("9:47")
+alert("10:03")
 
 import { questions } from "./questions.js";
 
 console.log(location.pathname);
+
+const rule = document.querySelector("hr");
 
 function createQuestion(details) {
   alert("create question")
@@ -26,7 +28,7 @@ function createQuestion(details) {
     questionSpace.appendChild(card);
   }
   alert("appending")
-  document.body.appendChild(questionSpace);
+  rule.after(questionSpace);
     alert("appended")
 }
 
@@ -36,7 +38,5 @@ const userScores = {
   musical: 0,
 };
 
-alert("before loop")
-for (let q of questions) {
-  createQuestion(q);
-}
+const questionIndex = 0;
+createQuestion(questionIndex);

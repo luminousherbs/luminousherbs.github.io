@@ -1,4 +1,4 @@
-alert("12:32")
+alert("12:35")
 
 import { questions } from "./questions.js";
 
@@ -28,7 +28,7 @@ function createQuestion(details) {
         const value = o.scores[key];
         alert("looping " + key + " " + value);
         userScores[key] += value;
-        alert(userScores.key)
+        alert(userScores[key])
       }
       questionIndex++;
       alert("incremented")
@@ -57,5 +57,5 @@ const userScores = {
   musical: 0,
 };
 
-const questionIndex = 0;
+let questionIndex = 0;
 createQuestion(questions[questionIndex]);

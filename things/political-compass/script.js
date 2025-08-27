@@ -6,7 +6,7 @@ console.log(location.pathname);
 
 function createQuestion(details) {
   alert("create question")
-  alert(questionSpace
+  alert(questionSpace)
   // delete the container to clear the previous question
   questionSpace.innerHTML = "";
   alert("removed")

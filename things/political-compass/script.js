@@ -1,10 +1,21 @@
-// alert("12:35")
+alert("13:05")
+// i know the code is awful
+// i wrote it on my phone
 
 import { questions } from "./questions.js";
 
 console.log(location.pathname);
 
 const rule = document.querySelectorAll("hr")[1];
+
+function finish(scores) {
+  questionSpace.innerHTML = "";
+  for (const key in scores) {
+    const heading = document.createElement("h2");
+    heading.textContent = `${key}: ${scores[key]}`;
+    questionSpace.appendChild(heading);
+  }
+}
 
 function createQuestion(details) {
   // alert("create question")
@@ -36,8 +47,8 @@ function createQuestion(details) {
         // alert("inside try")
       createQuestion(questions[questionIndex]);
       } catch (err) {
-                    alert("inside catch");
-        alert(err);
+         // ran out of qiestions
+        finish(userScores);
       }
       // alert("cool " + userScores.cool);
       // alert("mysterious " + userScores.mysterious);

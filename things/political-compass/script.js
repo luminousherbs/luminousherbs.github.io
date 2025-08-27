@@ -1,4 +1,4 @@
-alert("12:17")
+alert("12:20")
 
 import { questions } from "./questions.js";
 
@@ -41,6 +41,7 @@ function createQuestion(details) {
   insertBefore(questionSpace, rule);
     alert("appended")
 }
+window.createQuestion = createQuestion;
 
 const userScores = {
   cool: 0,

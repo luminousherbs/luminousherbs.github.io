@@ -15,6 +15,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
 
+    <style>
+    .square {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background-color: lightgray;
+      margin: 50px;
+    }
+
+    .dot {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      border-radius: 50%;
+      left: 60%;
+      top: 60%;
+      transform: translate(-50%, -50%); /* Center the dot */
+    }
+  </style>
+
     <!-- favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/default-32x32.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/default-16x16.png">
@@ -60,6 +81,9 @@
     </header>
     <hr>
     <div id="questionSpace"></div>
+    <div id="square">
+        <div id="dot"></div>
+    </div>
     <hr>
     <a href="..">&lt; Things</a>
 </body>

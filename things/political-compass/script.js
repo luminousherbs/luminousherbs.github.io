@@ -1,4 +1,4 @@
-alert("10:19")
+alert("10:25")
 
 import { questions } from "./questions.js";
 
@@ -22,7 +22,7 @@ function createQuestion(details) {
     image.src = o.image;
     card.appendChild(image);
     card.innerText += o.title
-    card.addEventListener("onclick", function() {
+    card.onclick = function() {
       alert(o.scores.cool, o.scores.mysterious, o.scores.musical)
     })
     questionSpace.appendChild(card);

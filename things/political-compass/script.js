@@ -1,21 +1,15 @@
-alert("9:42")
+alert("9:47")
 
 import { questions } from "./questions.js";
 
 console.log(location.pathname);
 
-const questionSpace = document.getElementById("questionSpace")
-alert(questionSpace)
-
 function createQuestion(details) {
   alert("create question")
-  alert(questionSpace)
-  alert(questionSpace?.remove)
+  alert(questionSpace
   // delete the container to clear the previous question
-  questionSpace.remove();
+  questionSpace.innerHTML = "";
   alert("removed")
-  const questionSpace = document.createElement("div");
-  questionSpace.id = "questionSpace";
   const heading = document.createElement("h2");
   heading.textContent = details.question;
   questionSpace.appendChild(heading);

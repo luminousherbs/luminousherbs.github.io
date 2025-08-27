@@ -1,4 +1,4 @@
-alert("10:53")
+alert("12:17")
 
 import { questions } from "./questions.js";
 
@@ -24,8 +24,9 @@ function createQuestion(details) {
     card.innerText += o.title
     card.onclick = function() {
       alert("clicked")
-      for (const [key, value] of o.scores) {
-        alert("looping " + key + " " + value)
+      for (const key in o.scores) {
+        const value = o.scores[key];
+        alert("looping " + key + " " + value);
         userScores[key] += value;
       }
       questionIndex++;

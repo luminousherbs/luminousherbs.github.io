@@ -1,4 +1,4 @@
-alert("10:25")
+alert("10:53")
 
 import { questions } from "./questions.js";
 
@@ -23,7 +23,14 @@ function createQuestion(details) {
     card.appendChild(image);
     card.innerText += o.title
     card.onclick = function() {
-      alert(o.scores.cool, o.scores.mysterious, o.scores.musical)
+      for (const [key, value] of o.scores) {
+        userScores[key] += value;
+      }
+      questionIndex++;
+      createQuestion(questions[questionIndex]);
+      alert("cool " + userScores.cool);
+      alert("mysterious " + userScores.mysterious);
+      alert("musical " + userScores.musical);
     }
     questionSpace.appendChild(card);
   }

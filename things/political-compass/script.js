@@ -1,10 +1,10 @@
-alert("10:03")
+alert("10:12")
 
 import { questions } from "./questions.js";
 
 console.log(location.pathname);
 
-const rule = document.querySelector("hr");
+const rule = document.querySelectorAll("hr")[1];
 
 function createQuestion(details) {
   alert("create question")
@@ -28,7 +28,7 @@ function createQuestion(details) {
     questionSpace.appendChild(card);
   }
   alert("appending")
-  rule.after(questionSpace);
+  insertBefore(questionSpace, rule);
     alert("appended")
 }
 

@@ -5,14 +5,17 @@ import { questions } from "./questions.js";
 console.log(location.pathname);
 
 function createQuestion(details) {
+  alert("create question")
   // delete the container to clear the previous question
   questionSpace.remove();
+  alert("removed")
   const questionSpace = document.createElement("div");
   questionSpace.id = "questionSpace";
   const heading = document.createElement("h2");
   heading.textContent = details.question;
   questionSpace.appendChild(heading);
   for (let o of details.options) {
+    alert("looping option")
     const card = document.createElement("button");
     const image = document.createElement("img");
     image.src = o.image;
@@ -22,8 +25,10 @@ function createQuestion(details) {
       alert(o.scores.cool, o.scores.mysterious, o.scores.musical)
     })
     questionSpace.appendChild(card);
-  document.body.appendChild(questionSpace);
   }
+  alert("appending")
+  document.body.appendChild(questionSpace);
+    alert("appended")
 }
 
 const userScores = {
@@ -32,6 +37,7 @@ const userScores = {
   musical: 0,
 };
 
+alert("before loop")
 for (let q of questions) {
   createQuestion(q);
 }

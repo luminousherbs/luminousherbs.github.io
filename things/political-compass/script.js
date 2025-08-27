@@ -4,6 +4,8 @@ import { questions } from "./questions.js";
 
 console.log(location.pathname);
 
+const questionSpace = document.getElementById("questionSpace")
+
 function createQuestion(details) {
   alert("create question")
   alert(questionSpace)

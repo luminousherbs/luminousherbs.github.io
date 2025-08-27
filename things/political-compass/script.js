@@ -23,7 +23,9 @@ function createQuestion(details) {
     card.appendChild(image);
     card.innerText += o.title
     card.onclick = function() {
+      alert("clicked")
       for (const [key, value] of o.scores) {
+        alert("looping " + key + " " + value)
         userScores[key] += value;
       }
       questionIndex++;

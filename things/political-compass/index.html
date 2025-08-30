@@ -15,24 +15,80 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
 
-    <style>
-    .square {
+  <style>
+    .compass {
       position: relative;
       width: 200px;
       height: 200px;
-      background-color: lightgray;
-      margin: 50px;
+      background: #767676;
+      margin: 2em;
     }
 
-    .dot {
+    /* cross lines */
+    .compass::before,
+    .compass::after {
+      content: "";
       position: absolute;
-      width: 10px;
-      height: 10px;
-      background-color: rgb(126, 249, 132);
+      background-color: black;
+      z-index: 1;
+    }
+
+    /* vertical */
+    .compass::before {
+      width: 2px;
+      height: 100%;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+    }
+
+    /* horizontal */
+    .compass::after {
+      height: 2px;
+      width: 100%;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+    }
+
+    .text-top {
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .text-bottom {
+      position: absolute;
+      bottom: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .text-left {
+      position: absolute;
+      left: -45px;
+      top: 50%;
+      transform: translateY(-50%) rotate(-90deg);
+    }
+
+    .text-right {
+      position: absolute;
+      right: -55px;
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg);
+    }
+
+    .indicator {
+      position: absolute;
+      width: 0.6em;
+      height: 0.6em;
+      background-color: #7EF984;
       border-radius: 50%;
-      left: 60%;
-      top: 60%;
       transform: translate(-50%, -50%);
+      top: 50%;
+      left: 50%;
+      z-index: 2;
     }
   </style>
 
@@ -57,7 +113,7 @@
         <div class="header-content">
             <div class="header-text">
                 <h1>Political Compass</h1>
-                <p><strong>Complete this <del>personality quiz</del> <ins>sophisticated questionaire</ins> to discover your political ideology.</strong></p>
+                <p><strong>Complete this <del>personality quiz</del> <ins>sophisticated questionnaire</ins> to discover your political ideology.</strong></p>
                 <noscript>
                     <p>Your ancient browser doesn't support JavaScript. You can download a new one <a href="http://mozilla.org/firefox">here</a>.</p>
                 </noscript>
@@ -81,9 +137,19 @@
     </header>
     <hr>
     <div id="questionSpace"></div>
-    <div class="square">
-        <div class="dot" id="indicator"></div>
-    </div>
+    <!-- <div id="answerSpace"></div> -->
+    <details id="results" style="display: none;">
+        <summary>Show results</summary>
+        <div class="compass">
+        <div class="indicator" id="indicator"></div>
+        <div class="text-top">Cool</div>
+    <div class="text-bottom">Uncool</div>
+    <div class="text-left">Sterious</div>
+    <div class="text-right">Mysterious</div>
+        
+</div>
+    </details>
+    
     <hr>
     <a href="..">&lt; Things</a>
 </body>

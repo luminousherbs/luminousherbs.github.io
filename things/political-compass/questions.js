@@ -15,6 +15,7 @@ export const questions = [
         image: "/assets/images/air.jpg",
         scores: {
           cool: +1,
+          mysterious: -1,
           musical: +1,
         },
       },
@@ -45,7 +46,7 @@ export const questions = [
         title: "Family",
         image: "/assets/images/family.jpg",
         scores: {
-          cool: -2,
+          cool: -1,
           mysterious: -2,
         },
       },
@@ -54,6 +55,7 @@ export const questions = [
         image: "/assets/images/friends.jpg",
         scores: {
           cool: +2,
+          mysterious: -2,
           musical: -2,
         },
       },
@@ -96,6 +98,7 @@ export const questions = [
         image: "/assets/images/strong.jpg",
         scores: {
           cool: +2,
+          mysterious: -1,
         },
       },
       {
@@ -136,7 +139,9 @@ export const questions = [
       {
         title: "Somewhat disagree",
         image: "/assets/images/no.jpg",
-        scores: {},
+        scores: {
+          mysterious: -1,
+        },
       },
       {
         title: "Somewhat agree",
@@ -174,7 +179,6 @@ export const questions = [
         title: "Clock tower",
         image: "/assets/images/clock-tower.jpg",
         scores: {
-          cool: -1,
           musical: +1,
         },
       },
@@ -198,6 +202,7 @@ export const questions = [
         image: "/assets/images/photo-id.jpg",
         scores: {
           cool: +1,
+          mysterious: -1,
         },
       },
     ],
@@ -224,7 +229,6 @@ export const questions = [
         title: "Don't know",
         image: "/assets/images/coward.jpg",
         scores: {
-          cool: -1,
           mysterious: +1,
           musical: -1,
         },

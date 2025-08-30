@@ -51,7 +51,6 @@ app.post("/tools/kill-server/", (req, res) => {
     process.exit(0);
 });
 
-
 app.listen(8000, () => {
     console.log("Serving on 8000");
 });

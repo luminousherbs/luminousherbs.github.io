@@ -1,156 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- javascript -->
-    <script src="script.js" type="module" defer></script>
-    <script src="/assets/scripts/toolbar.js" type="module" defer></script>
-    <script src="/assets/scripts/tax.js" type="module" defer></script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- stylesheet and fonts -->
-    <link rel="stylesheet" href="/assets/styles/default.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+        <!-- javascript -->
+        <script src="script.js" type="module" defer></script>
 
-  <style>
-    .compass {
-      position: relative;
-      width: 200px;
-      height: 200px;
-      background: #767676;
-      margin: 2em;
-    }
+        <!-- stylesheet and fonts -->
+        <link rel="stylesheet" href="/assets/styles/default.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+            rel="stylesheet"
+        />
 
-    /* cross lines */
-    .compass::before,
-    .compass::after {
-      content: "";
-      position: absolute;
-      background-color: black;
-      z-index: 1;
-    }
+        <style>
+            .compass {
+                position: relative;
+                width: 200px;
+                height: 200px;
+                background: #767676;
+                margin: 2em;
+            }
 
-    /* vertical */
-    .compass::before {
-      width: 2px;
-      height: 100%;
-      left: 50%;
-      top: 0;
-      transform: translateX(-50%);
-    }
+            /* cross lines */
+            .compass::before,
+            .compass::after {
+                content: "";
+                position: absolute;
+                background-color: black;
+                z-index: 1;
+            }
 
-    /* horizontal */
-    .compass::after {
-      height: 2px;
-      width: 100%;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-    }
+            /* vertical */
+            .compass::before {
+                width: 2px;
+                height: 100%;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+            }
 
-    .text-top {
-      position: absolute;
-      top: -25px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+            /* horizontal */
+            .compass::after {
+                height: 2px;
+                width: 100%;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+            }
 
-    .text-bottom {
-      position: absolute;
-      bottom: -25px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+            .text-top {
+                position: absolute;
+                top: -25px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
 
-    .text-left {
-      position: absolute;
-      left: -45px;
-      top: 50%;
-      transform: translateY(-50%) rotate(-90deg);
-    }
+            .text-bottom {
+                position: absolute;
+                bottom: -25px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
 
-    .text-right {
-      position: absolute;
-      right: -55px;
-      top: 50%;
-      transform: translateY(-50%) rotate(90deg);
-    }
+            .text-left {
+                position: absolute;
+                left: -45px;
+                top: 50%;
+                transform: translateY(-50%) rotate(-90deg);
+            }
 
-    .indicator {
-      position: absolute;
-      width: 0.6em;
-      height: 0.6em;
-      background-color: #7EF984;
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      top: 50%;
-      left: 50%;
-      z-index: 2;
-    }
-  </style>
+            .text-right {
+                position: absolute;
+                right: -55px;
+                top: 50%;
+                transform: translateY(-50%) rotate(90deg);
+            }
 
-    <!-- favicons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/default-32x32.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/default-16x16.png">
-    <link rel="shortcut icon" href="/assets/favicons/windows.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/ios.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/android.png">
+            .indicator {
+                position: absolute;
+                width: 0.6em;
+                height: 0.6em;
+                background-color: #7ef984;
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                top: 50%;
+                left: 50%;
+                z-index: 2;
+            }
+        </style>
 
-    <!-- og (mastodon card) -->
-    <meta property="og:title" content="Political Compass">
-    <meta property="og:description" content="Complete this personality quiz to discover your political ideology.">
-    <meta property="og:image" content="https://luminousherbs.github.io/things/og.png">
-    <meta property="og:url" content="https://luminousherbs.github.io/things/calculator">
-    <meta property="og:type" content="website">
-    
-    <title>Political Compass</title>
-</head>
-<body>
-    <header class="site-header">
-        <div class="header-content">
-            <div class="header-text">
-                <h1>Political Compass</h1>
-                <p><strong>Complete this <del>personality quiz</del> <ins>sophisticated questionnaire</ins> to discover your political ideology.</strong></p>
-                <noscript>
-                    <p>Your ancient browser doesn't support JavaScript. You can download a new one <a href="http://mozilla.org/firefox">here</a>.</p>
-                </noscript>
-            </div>
-            <div class="dropdown" id="dropdown">
-                <img src="/assets/favicons/android.png" class="header-img" alt="Tools" id="tools">
-                <div id="dropdownContent" class="dropdown-content">
-                    <button onclick="edit()">Edit</button>
-                    <br>
-                    <button onclick="share()">Share</button>
-                    <br>
-                    <button onclick="downloadHTML()">Download HTML</button>
-                    <br>
-                    <button onclick="downloadJavaScript()">Download JavaScript</button>
-                    <br>
-                    <select id="instanceSelector"></select>
-                    <br><br> <!-- extra padding to stop the cursor overshooting-->
-                </div>
-            </div>
+        <!-- favicons -->
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/assets/favicons/default-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/assets/favicons/default-16x16.png"
+        />
+        <link rel="shortcut icon" href="/assets/favicons/windows.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/assets/favicons/ios.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="/assets/favicons/android.png"
+        />
+
+        <!-- og (mastodon card) -->
+        <meta property="og:title" content="Political Compass" />
+        <meta
+            property="og:description"
+            content="Complete this personality quiz to discover your political ideology."
+        />
+        <meta
+            property="og:image"
+            content="https://luminousherbs.github.io/things/og.png"
+        />
+        <meta
+            property="og:url"
+            content="https://luminousherbs.github.io/things/calculator"
+        />
+        <meta property="og:type" content="website" />
+
+        <title>Political Compass</title>
+    </head>
+    <body>
+        <div id="questionSpace">
+            <h2>
+                Welcome to the <em>original</em> Political Compass (registered
+                trademark since 2001)
+            </h2>
+            <p>
+                The Political Compass (registered trademark since 2001) is not
+                merely a personality quiz. It is a revolutionary political
+                modelling system that ascends from the obsolete measures of
+                "Left" and "Right". Where the Left-Right spectrum falsely
+                assumes that all political beliefs can be categorized into just
+                one axis, the Political Compass (registered trademark since
+                2001) allows for a more sophisticated result, by falsely
+                assuming that all political beliefs can be categorized into just
+                two axes.
+            </p>
+            <p>
+                It has recently come to our attention that
+                <a href="https://politicalcompass.org/about"
+                    >opportunistic copycats</a
+                >
+                have repurposed our patented invention of the "two-dimensional
+                grid" for use in trival personality quizzes that undermine the
+                countless hours we spend writing contradictory questions and
+                vague options.
+            </p>
         </div>
-    </header>
-    <hr>
-    <div id="questionSpace"></div>
-    <!-- <div id="answerSpace"></div> -->
-    <details id="results" style="display: none;">
-        <summary>Show results</summary>
-        <div class="compass">
-        <div class="indicator" id="indicator"></div>
-        <div class="text-top">Cool</div>
-    <div class="text-bottom">Uncool</div>
-    <div class="text-left">Sterious</div>
-    <div class="text-right">Mysterious</div>
-        
-</div>
-    </details>
-    
-    <hr>
-    <a href="..">&lt; Things</a>
-</body>
+        <button id="startButton" onclick="start()">
+            ok please just get me to the quiz now
+        </button>
+        <details id="results" style="display: none">
+            <summary>Show results</summary>
+            <div class="compass">
+                <div class="indicator" id="indicator"></div>
+                <div class="text-top">Cool</div>
+                <div class="text-bottom">Uncool</div>
+                <div class="text-left">Sterious</div>
+                <div class="text-right">Mysterious</div>
+            </div>
+            <p><strong>Musical: <span id="musicalField"></span></strong></p>
+        </details>
+    </body>
 </html>

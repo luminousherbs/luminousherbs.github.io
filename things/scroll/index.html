@@ -1,125 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- javascript -->
-    <script src="script.js" type="module" defer></script>
-    <script src="/assets/scripts/toolbar.js" type="module" defer></script>
-    <script src="/assets/scripts/tax.js" type="module" defer></script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- stylesheet and fonts -->
-    <link rel="stylesheet" href="/assets/styles/default.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+        <!-- javascript -->
+        <script src="script.js" type="module" defer></script>
+        <script src="/assets/scripts/toolbar.js" type="module" defer></script>
+        <script src="/assets/scripts/tax.js" type="module" defer></script>
 
-    <style>
-        div.sticky {
-            position: sticky;
-            top: 0;
-            height: 6rem;
-            width: 0rem;
-        }
+        <!-- stylesheet and fonts -->
+        <link rel="stylesheet" href="/assets/styles/default.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+            rel="stylesheet"
+        />
 
-        div.bar {
-            height: 6rem;
-            width: 0rem;
-        }
-    </style>
+        <style>
+            div.sticky {
+                position: sticky;
+                top: 0;
+                height: 6rem;
+                width: 0rem;
+            }
 
-    <!-- favicons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/default-32x32.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/default-16x16.png">
-    <link rel="shortcut icon" href="/assets/favicons/windows.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/ios.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/android.png">
+            div.bar {
+                height: 6rem;
+                width: 0rem;
+            }
 
-    <!-- og (mastodon card) -->
-    <meta property="og:title" content="Scroll">
-    <meta property="og:description" content="A website by luminousherbs.">
-    <meta property="og:image" content="https://luminousherbs.github.io/things/og.png">
-    <meta property="og:url" content="https://luminousherbs.github.io/things/scroll">
-    <meta property="og:type" content="website">
-    
-    <title>Scroll</title>
-</head>
-<body>
-    <header class="site-header">
-        <div class="header-content">
-            <div class="header-text">
-                <h1>Scroll</h1>
-                <p><strong>The next hit racing game.</strong></p>
-                <noscript>
-                    <p>Your ancient browser doesn't support JavaScript. You can download a new one <a href="http://mozilla.org/firefox">here</a>.</p>
-                </noscript>
-            </div>
-            <div class="dropdown" id="dropdown">
-                <img src="/assets/favicons/android.png" class="header-img" alt="Tools" id="tools">
-                <div id="dropdownContent" class="dropdown-content">
-                    <button onclick="edit()">Edit</button>
-                    <br>
-                    <button onclick="share()">Share</button>
-                    <br>
-                    <button onclick="downloadHTML()">Download HTML</button>
-                    <br>
-                    <button onclick="downloadJavaScript()">Download JavaScript</button>
-                    <br>
-                    <select id="instanceSelector"></select>
-                    <br><br> <!-- extra padding to stop the cursor overshooting-->
+            body {
+                height: 100000px; /* ridiculously tall page */
+                background: linear-gradient(to bottom, #eeeeff, #111122);
+                color: #000000;
+            }
+            hr {
+                border-color: #000000;
+            }
+            a,
+            a:link,
+            a:visited {
+                color: #000000;
+            }
+        </style>
+
+        <!-- favicons -->
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/assets/favicons/default-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/assets/favicons/default-16x16.png"
+        />
+        <link rel="shortcut icon" href="/assets/favicons/windows.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/assets/favicons/ios.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="/assets/favicons/android.png"
+        />
+
+        <!-- og (mastodon card) -->
+        <meta property="og:title" content="Scroll" />
+        <meta property="og:description" content="A website by luminousherbs." />
+        <meta
+            property="og:image"
+            content="https://luminousherbs.github.io/things/og.png"
+        />
+        <meta
+            property="og:url"
+            content="https://luminousherbs.github.io/things/scroll"
+        />
+        <meta property="og:type" content="website" />
+
+        <title>Scroll</title>
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Scroll</h1>
+                    <p><strong>The next hit racing game.</strong></p>
+                    <noscript>
+                        <p>
+                            Your ancient browser doesn't support JavaScript. You
+                            can download a new one
+                            <a href="http://mozilla.org/firefox">here</a>.
+                        </p>
+                    </noscript>
+                </div>
+                <div class="dropdown" id="dropdown">
+                    <img
+                        src="/assets/favicons/android.png"
+                        class="header-img"
+                        alt="Tools"
+                        id="tools"
+                    />
+                    <div id="dropdownContent" class="dropdown-content">
+                        <button onclick="edit()">Edit</button>
+                        <br />
+                        <button onclick="share()">Share</button>
+                        <br />
+                        <button onclick="downloadHTML()">Download HTML</button>
+                        <br />
+                        <button onclick="downloadJavaScript()">
+                            Download JavaScript
+                        </button>
+                        <br />
+                        <select id="instanceSelector"></select>
+                        <br /><br />
+                        <!-- extra padding to stop the cursor overshooting-->
+                    </div>
                 </div>
             </div>
+        </header>
+        <hr />
+        <a href="..">&lt; Things</a>
+        <div class="sticky">
+            <div
+                id="speedField"
+                style="background-color: red"
+                class="bar"
+            ></div>
+            <div
+                id="accelerationField"
+                style="background-color: blue"
+                class="bar"
+            ></div>
         </div>
-    </header>
-    <hr>
-    <div class="sticky">
-        <div id="speedField" style="background-color: red;" class="bar"></div>
-        <div id="accelerationField" style="background-color: blue;" class="bar"></div>
-    </div>
-    
-    <br>
-    <img src="/assets/images/shifty0.jpg" width="100%">
-    <img src="/assets/images/shifty1.jpg" width="100%">
-    <img src="/assets/images/shifty2.jpg" width="100%">
-    <img src="/assets/images/shifty3.jpg" width="100%">
-    <img src="/assets/images/shifty4.jpg" width="100%">
-    <img src="/assets/images/shifty5.jpg" width="100%">
-    <img src="/assets/images/shifty6.jpg" width="100%">
-    <img src="/assets/images/shifty7.jpg" width="100%">
-    <img src="/assets/images/shifty8.jpg" width="100%">
-    <img src="/assets/images/shifty9.jpg" width="100%">
-    <img src="/assets/images/shifty0.jpg" width="100%">
-    <img src="/assets/images/shifty1.jpg" width="100%">
-    <img src="/assets/images/shifty2.jpg" width="100%">
-    <img src="/assets/images/shifty3.jpg" width="100%">
-    <img src="/assets/images/shifty4.jpg" width="100%">
-    <img src="/assets/images/shifty5.jpg" width="100%">
-    <img src="/assets/images/shifty6.jpg" width="100%">
-    <img src="/assets/images/shifty7.jpg" width="100%">
-    <img src="/assets/images/shifty8.jpg" width="100%">
-    <img src="/assets/images/shifty9.jpg" width="100%">
-    <img src="/assets/images/shifty0.jpg" width="100%">
-    <img src="/assets/images/shifty1.jpg" width="100%">
-    <img src="/assets/images/shifty2.jpg" width="100%">
-    <img src="/assets/images/shifty3.jpg" width="100%">
-    <img src="/assets/images/shifty4.jpg" width="100%">
-    <img src="/assets/images/shifty5.jpg" width="100%">
-    <img src="/assets/images/shifty6.jpg" width="100%">
-    <img src="/assets/images/shifty7.jpg" width="100%">
-    <img src="/assets/images/shifty8.jpg" width="100%">
-    <img src="/assets/images/shifty9.jpg" width="100%">
-    <img src="/assets/images/shifty0.jpg" width="100%">
-    <img src="/assets/images/shifty1.jpg" width="100%">
-    <img src="/assets/images/shifty2.jpg" width="100%">
-    <img src="/assets/images/shifty3.jpg" width="100%">
-    <img src="/assets/images/shifty4.jpg" width="100%">
-    <img src="/assets/images/shifty5.jpg" width="100%">
-    <img src="/assets/images/shifty6.jpg" width="100%">
-    <img src="/assets/images/shifty7.jpg" width="100%">
-    <img src="/assets/images/shifty8.jpg" width="100%">
-    <img src="/assets/images/shifty9.jpg" width="100%">
-    <hr>
-    <a href="..">&lt; Things</a>
-</body>
+
+        <br />
+    </body>
 </html>

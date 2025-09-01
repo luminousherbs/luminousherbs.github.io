@@ -26,7 +26,7 @@ export async function parseFeed(category, showDescription = true, showDate = fal
             const subheading = document.createElement("p");
 
             if (showDescription) {
-                subheading.innerText += item.querySelector("description")?.textContent ?? fillerWord();
+                subheading.innerText += item.querySelector("description")?.textContent ?? "Bad code only.";
             }
 
             if (showDate) {

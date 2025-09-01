@@ -1,3 +1,5 @@
+import { randomPhrase, fillerWord } from "./filler.js";
+
 export async function parseFeed(category, showDescription = true, showDate = false) {
 
     const elements = [];
@@ -24,7 +26,7 @@ export async function parseFeed(category, showDescription = true, showDate = fal
             const subheading = document.createElement("p");
 
             if (showDescription) {
-                subheading.innerText += item.querySelector("description").textContent;
+                subheading.innerText += item.querySelector("description")?.textContent ?? fillerWord();
             }
 
             if (showDate) {

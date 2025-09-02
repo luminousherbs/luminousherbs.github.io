@@ -105,7 +105,7 @@ export const questions = [
             },
             {
                 title: "Super weak",
-                image: "/assets/images/weak.jpg",
+                image: "https://static.independent.co.uk/2021/07/15/13/A16I9125-Edit.jpg?width=990&auto=webp&quality=75", // hopefully this is legal
                 scores: {
                     cool: -2,
                     mysterious: -2,
@@ -142,7 +142,7 @@ export const questions = [
             },
             {
                 title: "Somewhat disagree",
-                image: "/assets/images/no.jpg",
+                image: "/assets/images/no2.jpg",
                 scores: {
                     mysterious: -2,
                 },
@@ -157,7 +157,7 @@ export const questions = [
             },
             {
                 title: "Disagree",
-                image: "/assets/images/no2.jpg",
+                image: "/assets/images/no.jpg",
                 scores: {
                     cool: -2,
                     mysterious: -1,
@@ -194,7 +194,7 @@ export const questions = [
             },
             {
                 title: "Clubcard propaganda",
-                image: "/assets/images/clubcard.jpg",
+                image: "https://media.product.which.co.uk/prod/images/original/gm-7bf38152-5b10-4799-a83a-60170e9a4a7b-tesco-clubcard.jpg", // hopefully this is legal
                 scores: {
                     cool: -1,
                     mysterious: +1,
@@ -202,7 +202,7 @@ export const questions = [
             },
             {
                 title: "Community voting",
-                image: "/assets/images/tesco-voting.jpg",
+                image: "/assets/images/vote.jpg",
                 scores: {
                     cool: -1,
                     mysterious: -1,

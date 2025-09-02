@@ -91,6 +91,37 @@
                 left: 50%;
                 z-index: 2;
             }
+            .card {
+                min-width: 180px;
+                width: 20%;
+                border-radius: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid #444444;
+                background-color: #DDDDDD;
+            }
+
+            .circle-img {
+                width: 80%;
+                aspect-ratio: 1 / 1;
+                border-radius: 50%;
+                object-fit: cover;
+                border: 2px solid #000000;
+                margin-top: 10%;
+            }
+
+            .card > p {
+                font-size: 2em
+
+            }
+
+            .container {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px
+            }
         </style>
 
         <!-- favicons -->
@@ -139,10 +170,10 @@
     </head>
     <body>
         <div id="questionSpace">
-            <h2>
+            <h1>
                 Welcome to the <em>original</em> Political Compass (registered
                 trademark since 2001)
-            </h2>
+            </h1>
             <p>
                 The Political Compass (registered trademark since 2001) is not
                 merely a personality quiz. It is a revolutionary political
@@ -168,6 +199,7 @@
         <button id="startButton" onclick="start()">
             ok please just get me to the quiz now
         </button>
+
         <details id="results" style="display: none">
             <summary>Show results</summary>
             <div class="compass">
@@ -177,7 +209,9 @@
                 <div class="text-left">Sterious</div>
                 <div class="text-right">Mysterious</div>
             </div>
-            <p><strong>Musical: <span id="musicalField"></span></strong></p>
+            <p>
+                <strong>Musical: <span id="musicalField"></span></strong>
+            </p>
         </details>
     </body>
 </html>

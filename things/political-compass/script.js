@@ -51,7 +51,7 @@ const spiritGangsters = {
     "Dave from down the pub": {
         image: "/assets/images/dave.jpg"
     },
-    "Unnamed2": {
+    "Claire": {
         image: "/assets/images/unnamed2.jpg"
     },
 };
@@ -93,7 +93,7 @@ function getSpiritGangster(scores) {
                 userGangster = "Dave from down the pub";
             } else {
                 // uncool and musical
-                userGangster = "Unnamed2";
+                userGangster = "Claire";
             }
         }
     } else {
@@ -149,7 +149,7 @@ function finish(scores) {
     indicator.style.left = `${ 50 * (scores.mysterious + bounds.mysterious) / bounds.mysterious }%`;
     musicalField.textContent = `${ Math.ceil(50 * (scores.musical + bounds.musical) / bounds.musical) }%`
     
-    const heading = document.createElement("h2");
+    const heading = document.createElement("h1");
     heading.textContent = "Quiz complete!";
     questionSpace.appendChild(heading);
 
@@ -159,46 +159,57 @@ function finish(scores) {
 }
 
 function createQuestion(details) {
-    // alert("create question")
-    // alert(questionSpace)
-    // delete the container to clear the previous question
+
+    // clear the previous question
     questionSpace.innerHTML = "";
-    // alert("removed")
-    const heading = document.createElement("h2");
+    
+    // create heading
+    const heading = document.createElement("h1");
     heading.textContent = details.question;
     questionSpace.appendChild(heading);
+
+    // create container for option cards
+    const container = document.createElement("div");
+    container.className = "container";
+    questionSpace.appendChild(container);
+
+    // create option cards
     for (let o of details.options) {
-        // alert("looping option")
+
+        // create card
         const card = document.createElement("button");
+        card.className = "card";
+
+        // create image
         const image = document.createElement("img");
         image.src = o.image;
+        image.className = "circle-img";
         card.appendChild(image);
-        card.innerText += o.title;
+
+        // create text
+        const text = document.createElement("p");
+        text.textContent = o.title;
+        card.appendChild(text);
+
+        // handle select
         card.onclick = function () {
-            // alert("clicked")
-            for (const key in o.scores) {
-                const value = o.scores[key];
-                // alert("looping " + key + " " + value);
-                userScores[key] += value;
-                // alert(userScores[key])
+            // loop over each score
+            for (const key in o.scores) {;
+                userScores[key] += o.scores[key];
             }
+
+            // move to the next question
             questionIndex++;
-            // alert("incremented")
             try {
-                // alert("inside try")
                 createQuestion(questions[questionIndex]);
             } catch (err) {
-                // ran out of qiestions
+                // ran out of questions
                 finish(userScores);
             }
-            // alert("cool " + userScores.cool);
-            // alert("mysterious " + userScores.mysterious);
-            // alert("musical " + userScores.musical);
         };
-        questionSpace.appendChild(card);
+
+        // create card
+        container.appendChild(card);
     }
-    // alert("appending")
-    // insertBefore(questionSpace, rule);
-    // alert("appended")
 }
 window.createQuestion = createQuestion;

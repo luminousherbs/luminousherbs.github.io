@@ -4,18 +4,17 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-
     body {
-        color: #FFFFFF;
+        color: #ffffff;
         background-color: #000000;
     }
 
     hr {
-        border-color: #DDDDDD;
+        border-color: #dddddd;
     }
 
     aside {
-        border-color: #EEEEEE;
+        border-color: #eeeeee;
         background-color: #333333;
     }
 
@@ -25,11 +24,12 @@ body {
 
     textarea {
         background-color: #222222;
-        color: #FFFFFF;
+        color: #ffffff;
     }
 
-    th, td {
-        border-color: #FFFFFF;
+    th,
+    td {
+        border-color: #ffffff;
     }
 
     th {
@@ -39,15 +39,15 @@ body {
     button:disabled {
         background-color: #444444;
         border-color: #000000;
-        color: #CCCCCC;
+        color: #cccccc;
     }
 
     a:link {
-        color: #7EF984;
+        color: #7ef984;
     }
 
     a:visited {
-        color: #EB80D9;
+        color: #eb80d9;
     }
 
     /* TODO: fix flash of green when hovering in firefox */
@@ -57,7 +57,7 @@ body {
     }
 
     .page-card:visited:hover {
-        background-color: #4b3246; 
+        background-color: #4b3246;
     }
 
     .page-card:link {
@@ -65,16 +65,14 @@ body {
     }
 
     .page-card:link:hover {
-        background-color: #384b32; 
+        background-color: #384b32;
     }
-
 }
 
 @media (prefers-color-scheme: light) {
-
     body {
         color: #000000;
-        background-color: #FFFFFF;
+        background-color: #ffffff;
     }
 
     hr {
@@ -83,39 +81,40 @@ body {
 
     aside {
         border-color: #111111;
-        background-color: #CCCCCC;
+        background-color: #cccccc;
     }
 
     section {
-        background-color: #DDDDDD;
+        background-color: #dddddd;
     }
 
     textarea {
-        background-color: #DDDDDD;
+        background-color: #dddddd;
         color: #000000;
     }
 
-    th, td {
+    th,
+    td {
         border-color: #000000;
     }
 
     th {
-        background-color: #BBBBBB;
+        background-color: #bbbbbb;
     }
 
     button:disabled {
         background-color: #777777;
         border-color: #555555;
-        color: #CCCCCC;
+        color: #cccccc;
         cursor: not-allowed;
     }
 
     a:link {
-        color: #5ECE63;
+        color: #5ece63;
     }
 
     a:visited {
-        color: #CD60BB;
+        color: #cd60bb;
     }
 
     /* TODO: fix flash of green when hovering in firefox */
@@ -125,7 +124,7 @@ body {
     }
 
     .page-card:visited:hover {
-        background-color: #eeb0e1; 
+        background-color: #eeb0e1;
     }
 
     .page-card:link {
@@ -133,9 +132,8 @@ body {
     }
 
     .page-card:link:hover {
-        background-color: #a6d897; 
+        background-color: #a6d897;
     }
-
 }
 
 body {
@@ -150,6 +148,10 @@ hr {
     border-style: solid;
 }
 
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
 
 h1 {
     font-size: 2.5rem;
@@ -172,14 +174,10 @@ h3 {
     margin-bottom: 0.5em;
 }
 
-
 p {
     font-size: 1rem;
     font-weight: 400;
 }
-
-
-
 
 strong {
     font-weight: 800;
@@ -189,8 +187,6 @@ del {
     text-decoration: line-through;
     text-decoration-thickness: 2px;
 }
-
-
 
 aside {
     border-left: 5px solid;
@@ -209,24 +205,21 @@ textarea {
     height: auto;
 }
 
-
-
 table {
     border-collapse: collapse;
 }
 
-th, td {
+th,
+td {
     border: 1px solid;
     padding: 8px;
     text-align: left;
 }
 
-
-
 button {
     color: #000000;
-    background-color: #FAEC81;
-    border-color: #C8BD67;
+    background-color: #faec81;
+    border-color: #c8bd67;
     border-style: solid;
     border-width: 2px;
     border-radius: 3px;
@@ -239,16 +232,12 @@ button:enabled:hover {
 }
 
 button:disabled {
-    cursor: not-allowed; 
+    cursor: not-allowed;
 }
-
-
-
 
 input {
     font-family: Nunito Sans, sans-serif;
 }
-
 
 .page-card {
     display: inline-block;
@@ -270,7 +259,7 @@ input {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: -0.5em
+    margin-bottom: -0.5em;
 }
 
 .header-text {
@@ -282,8 +271,6 @@ input {
     width: 48px;
     height: 48px;
 }
-
-
 
 .dropdown {
     position: relative;

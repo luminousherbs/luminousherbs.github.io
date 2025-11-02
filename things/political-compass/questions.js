@@ -61,7 +61,7 @@ export const questions = [
                 title: "Enemies",
                 image: "/assets/images/enemies.jpg",
                 scores: {
-                  cool: -1,
+                    cool: -1,
                     mysterious: +2,
                 },
             },
@@ -225,7 +225,7 @@ export const questions = [
                 title: "Yes",
                 image: "/assets/images/yes.jpg",
                 scores: {
-                  mysterious: -1,
+                    mysterious: -1,
                     cool: +1,
                 },
             },

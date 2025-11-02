@@ -1,7 +1,7 @@
 console.log(location.pathname);
 
 function isRedirect() {
-    return !!(getParameter("url"))
+    return !!getParameter("url");
 }
 
 function removeParameter(key) {

@@ -10,7 +10,7 @@ const toggleables = new Map([
     ["^", ["<sup>", "</sup>"]],
     ["```", ["<pre><code>", "</pre></code>"]],
     ["`", ["<code>", "</code>"]],
-])
+]);
 
 const lineEffects = new Map([
     ["#", ["\n<h1>", "</h2>\n"]],
@@ -22,7 +22,7 @@ const lineEffects = new Map([
     ["> ", ["\n<aside>", "</aside>\n"]],
     ["- ", ["\n<li>", "</li>"]],
     ["---", ["\n<hr>", ""]],
-])
+]);
 
 const defaultInput = `## Welcome to Markdown
 Your text can be *italic* or **bold** or ***both***, and you can format \`code\` as well.
@@ -65,29 +65,29 @@ function replaceLineEffects(text) {
         for (let e of lineEffects.keys()) {
             if (l.startsWith(e)) {
                 // surround the line with the relevant opening and closing tags
-                newl = `${lineEffects.get(e)[0]}${l.replace(e, "")}${lineEffects.get(e)[1]}`
+                newl = `${lineEffects.get(e)[0]}${l.replace(e, "")}${
+                    lineEffects.get(e)[1]
+                }`;
             }
         }
         newText += newl;
         // weird but functional
-        newText += (newl === l ? "<br>": "");
+        newText += newl === l ? "<br>" : "";
     }
     return newText;
 }
 
 function setHeights() {
-
     // set the height of the box to the height of the content
 
     input.style.height = "auto";
     input.style.height = input.scrollHeight + "px";
-    
+
     html.style.height = "auto";
     html.style.height = html.scrollHeight + "px";
 }
 
 function onInput() {
-
     setHeights();
 
     // convert markdown to html
@@ -100,23 +100,20 @@ function onInput() {
 
     // set the html
     html.value = text;
-
 }
 
 function onHtml() {
-
     setHeights();
 
     // set the text
     output.innerHTML = html.value;
 
     // TODO: set the markdown
-
 }
 
 // listen for inputs
 input.addEventListener("input", onInput);
-html .addEventListener("input", onHtml );
+html.addEventListener("input", onHtml);
 
 // set default value
 input.value = defaultInput;

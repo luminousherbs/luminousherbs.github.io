@@ -4,14 +4,14 @@ const prices = new Map([
     ["Strength Potion", 5],
     ["Sword", 20],
     ["Gem", 50],
-])
+]);
 
 function getCoins() {
     return +localStorage.getItem("coins") ?? 0;
 }
 
 function buy(item) {
-    let coins = getCoins()
+    let coins = getCoins();
     if (coins < prices.get(item)) return false;
     coins -= prices.get(item);
     localStorage.setItem("coins", coins);
@@ -21,25 +21,31 @@ function buy(item) {
 window.buy = buy;
 
 function updateDisplay() {
-    output.innerText = `You have ${getCoins()} coins.`
+    output.innerText = `You have ${getCoins()} coins.`;
     itemsDisplay.innerHTML = "";
-    prices.forEach(function(value, key) { // surely value and key are the wrong way round?
-        if (localStorage.getItem(key)) itemsDisplay.innerHTML += `${key}: ${localStorage.getItem(key)} <br>`
-    })
+    prices.forEach(function (value, key) {
+        // surely value and key are the wrong way round?
+        if (localStorage.getItem(key))
+            itemsDisplay.innerHTML += `${key}: ${localStorage.getItem(
+                key
+            )} <br>`;
+    });
     updateAffordable();
 }
 window.updateDisplay = updateDisplay;
 
 function updateAffordable() {
-    prices.forEach(function(value, key) {
+    prices.forEach(function (value, key) {
         if (value > getCoins()) {
             // special case where `getElementById` is required
             document.getElementById(key).children[2].firstChild.disabled = true;
         } else {
             // special case where `getElementById` is required
-            document.getElementById(key).children[2].firstChild.disabled = false;
+            document.getElementById(
+                key
+            ).children[2].firstChild.disabled = false;
         }
-    })
+    });
 }
 
 function addCoin() {
@@ -52,5 +58,3 @@ function addCoin() {
 // define elementS
 getCoin.addEventListener("click", addCoin);
 updateDisplay();
-
-

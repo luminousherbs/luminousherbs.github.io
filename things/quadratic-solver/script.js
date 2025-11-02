@@ -1,10 +1,10 @@
 console.log(location.pathname);
 
 // wouldn't need this if js didn't suck
-// let fieldA, fieldB, fieldC, fieldXPositive, fieldXNegative; 
+// let fieldA, fieldB, fieldC, fieldXPositive, fieldXNegative;
 
 function questionInput() {
-    const res = solve({a: fieldA.value, b: fieldB.value, c: fieldC.value});
+    const res = solve({ a: fieldA.value, b: fieldB.value, c: fieldC.value });
     console.log(res);
     fieldXPositive.value = res.xPositive;
     fieldXNegative.value = res.xNegative;
@@ -13,7 +13,13 @@ function questionInput() {
 }
 
 function answerInput() {
-    let vals = {a: fieldA.value, b: fieldB.value, c: fieldC.value, xPositive: fieldXPositive.value, xNegative: fieldXNegative.value};
+    let vals = {
+        a: fieldA.value,
+        b: fieldB.value,
+        c: fieldC.value,
+        xPositive: fieldXPositive.value,
+        xNegative: fieldXNegative.value,
+    };
     let newVals = vals;
 
     delete newVals.a;
@@ -56,27 +62,57 @@ function fixAllWidths(elements) {
 }
 
 function findA(values) {
-    const aPositive = Number(((-values.c / (values.xPositive * values.xPositive)) - (values.b / values.xPositive)).toFixed(10));
-    const aNegative = Number(((-values.c / (values.xNegative * values.xNegative)) - (values.b / values.xNegative)).toFixed(10));
-    return aPositive == aNegative ? aPositive: NaN;
+    const aPositive = Number(
+        (
+            -values.c / (values.xPositive * values.xPositive) -
+            values.b / values.xPositive
+        ).toFixed(10)
+    );
+    const aNegative = Number(
+        (
+            -values.c / (values.xNegative * values.xNegative) -
+            values.b / values.xNegative
+        ).toFixed(10)
+    );
+    return aPositive == aNegative ? aPositive : NaN;
 }
 
 function findB(values) {
-    const bPositive = Number(((-values.c / values.xPositive) - (values.a * values.xPositive)).toFixed(10));
-    const bNegative = Number(((-values.c / values.xNegative) - (values.a * values.xNegative)).toFixed(10));
-    return bPositive == bNegative ? bPositive: NaN;
+    const bPositive = Number(
+        (-values.c / values.xPositive - values.a * values.xPositive).toFixed(10)
+    );
+    const bNegative = Number(
+        (-values.c / values.xNegative - values.a * values.xNegative).toFixed(10)
+    );
+    return bPositive == bNegative ? bPositive : NaN;
 }
 
 function findC(values) {
-    const cPositive = Number((-(values.a * values.xPositive * values.xPositive) - (values.b * values.xPositive)).toFixed(10));
-    const cNegative = Number((-(values.a * values.xNegative * values.xNegative) - (values.b * values.xNegative)).toFixed(10));
-    return cPositive == cNegative ? cPositive: NaN;
+    const cPositive = Number(
+        (
+            -(values.a * values.xPositive * values.xPositive) -
+            values.b * values.xPositive
+        ).toFixed(10)
+    );
+    const cNegative = Number(
+        (
+            -(values.a * values.xNegative * values.xNegative) -
+            values.b * values.xNegative
+        ).toFixed(10)
+    );
+    return cPositive == cNegative ? cPositive : NaN;
 }
 
 function findX(values) {
     return {
-        xPositive: (-values.b + Math.sqrt((values.b * values.b) - (4 * values.a * values.c))) / (2 * values.a),
-        xNegative: (-values.b - Math.sqrt((values.b * values.b) - (4 * values.a * values.c))) / (2 * values.a)
+        xPositive:
+            (-values.b +
+                Math.sqrt(values.b * values.b - 4 * values.a * values.c)) /
+            (2 * values.a),
+        xNegative:
+            (-values.b -
+                Math.sqrt(values.b * values.b - 4 * values.a * values.c)) /
+            (2 * values.a),
     };
 }
 
@@ -87,7 +123,10 @@ function solve(values) {
         return findB(values);
     } else if (values.c === undefined) {
         return findC(values);
-    } else if (values.xPositive === undefined && values.xNegative === undefined) {
+    } else if (
+        values.xPositive === undefined &&
+        values.xNegative === undefined
+    ) {
         return findX(values);
     } else {
         return NaN;

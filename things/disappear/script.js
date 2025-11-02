@@ -4,9 +4,8 @@ console.log(location.pathname);
 let count = 0;
 let clock;
 
-
 function stopDeleting() {
-    clearInterval(clock)
+    clearInterval(clock);
 }
 
 function button() {

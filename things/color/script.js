@@ -22,7 +22,7 @@ function saveValues() {
 }
 
 function loadValues() {
-    display.style.backgroundColor = `rgb(${localStorage.red}, ${localStorage.green}, ${localStorage.blue})`
+    display.style.backgroundColor = `rgb(${localStorage.red}, ${localStorage.green}, ${localStorage.blue})`;
     slideRed.value = numberRed.innerText = localStorage.red;
     slideGreen.value = numberGreen.innerText = localStorage.green;
     slideBlue.value = numberBlue.innerText = localStorage.blue;
@@ -33,7 +33,7 @@ function loadValues() {
 }
 
 function copy() {
-    navigator.clipboard.writeText(display.style.backgroundColor)
+    navigator.clipboard.writeText(display.style.backgroundColor);
 }
 window.copy = copy;
 

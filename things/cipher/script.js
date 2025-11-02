@@ -9,9 +9,9 @@ function shiftOne(str) {
     let newstr = "";
     for (let s of str) {
         if (shiftReference.includes(s)) {
-            newstr += shiftReference[shiftReference.indexOf(s) + 1]
+            newstr += shiftReference[shiftReference.indexOf(s) + 1];
         } else {
-            newstr += s
+            newstr += s;
         }
     }
     return newstr;
@@ -21,9 +21,9 @@ function shiftMinusOne(str) {
     let newstr = "";
     for (let s of str) {
         if (shiftReference.includes(s)) {
-            newstr += shiftReference[shiftReference.lastIndexOf(s) - 1]
+            newstr += shiftReference[shiftReference.lastIndexOf(s) - 1];
         } else {
-            newstr += s
+            newstr += s;
         }
     }
     return newstr;
@@ -32,18 +32,17 @@ function shiftMinusOne(str) {
 function caesarShift(str, shift) {
     shift %= 26; // save some time
     for (let i = 0; i < Math.abs(shift); i++) {
-        str = (Math.abs(shift) === shift ? shiftOne: shiftMinusOne)(str)
+        str = (Math.abs(shift) === shift ? shiftOne : shiftMinusOne)(str);
     }
     return str;
 }
 
-
 function onSlideInput() {
     amountField.innerText = shiftField.value;
     if (forward) {
-        onForwardInput()
+        onForwardInput();
     } else {
-        onBackwardInput()
+        onBackwardInput();
     }
 }
 
@@ -58,6 +57,6 @@ function onBackwardInput() {
 }
 
 // listen for input
-decodedField.addEventListener("input", onForwardInput );
+decodedField.addEventListener("input", onForwardInput);
 encodedField.addEventListener("input", onBackwardInput);
-shiftField  .addEventListener("input", onSlideInput   );
+shiftField.addEventListener("input", onSlideInput);

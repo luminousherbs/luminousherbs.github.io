@@ -18,7 +18,6 @@ function getTextFromField() {
     const input = textField.value;
     let formattedInput = "";
     for (let w of input.split(" ")) {
-
         // <span style="color: red">red</span>
         w = `<span style="color: ${w}">${w}</span>`;
 

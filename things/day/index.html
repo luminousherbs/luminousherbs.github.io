@@ -1,71 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- javascript -->
-    <script src="script.js" type="module" defer></script>
-    <script src="/assets/scripts/toolbar.js" type="module" defer></script>
-    <script src="/assets/scripts/tax.js" type="module" defer></script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- stylesheet and fonts -->
-    <link rel="stylesheet" href="/assets/styles/default.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+        <!-- javascript -->
+        <script src="script.js" type="module" defer></script>
+        <script src="/assets/scripts/toolbar.js" type="module" defer></script>
+        <script src="/assets/scripts/tax.js" type="module" defer></script>
 
-    <!-- favicons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/default-32x32.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/default-16x16.png">
-    <link rel="shortcut icon" href="/assets/favicons/windows.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/ios.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/android.png">
+        <!-- stylesheet and fonts -->
+        <link rel="stylesheet" href="/assets/styles/default.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+            rel="stylesheet"
+        />
 
-    <!-- og (mastodon card) -->
-    <meta property="og:title" content="Day">
-    <meta property="og:description" content="A website by luminousherbs.">
-    <meta property="og:image" content="https://luminousherbs.github.io/things/og.png">
-    <meta property="og:url" content="https://luminousherbs.github.io/things/day">
-    <meta property="og:type" content="website">
+        <!-- favicons -->
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/assets/favicons/default-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/assets/favicons/default-16x16.png"
+        />
+        <link rel="shortcut icon" href="/assets/favicons/windows.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/assets/favicons/ios.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="/assets/favicons/android.png"
+        />
 
-    
-    <title>Day</title>
-</head>
-<body>
-    <header class="site-header">
-        <div class="header-content">
-            <div class="header-text">
-                <h1>Day</h1>
-                <noscript>
-                    <p>Your ancient browser doesn't support JavaScript. You can download a new one <a href="http://mozilla.org/firefox">here</a>.</p>
-                </noscript>
-            </div>
-            <div class="dropdown" id="dropdown">
-                <img src="/assets/favicons/android.png" class="header-img" alt="Tools" id="tools">
-                <div id="dropdownContent" class="dropdown-content">
-                    <button onclick="edit()">Edit</button>
-                    <br>
-                    <button onclick="share()">Share</button>
-                    <br>
-                    <button onclick="downloadHTML()">Download HTML</button>
-                    <br>
-                    <button onclick="downloadJavaScript()">Download JavaScript</button>
-                    <br>
-                    <select id="instanceSelector"></select>
-                    <br><br> <!-- extra padding to stop the cursor overshooting-->
+        <!-- og (mastodon card) -->
+        <meta property="og:title" content="Day" />
+        <meta property="og:description" content="A website by luminousherbs." />
+        <meta
+            property="og:image"
+            content="https://luminousherbs.github.io/things/og.png"
+        />
+        <meta
+            property="og:url"
+            content="https://luminousherbs.github.io/things/day"
+        />
+        <meta property="og:type" content="website" />
+
+        <title>Day</title>
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Day</h1>
+                    <noscript>
+                        <p>
+                            Your ancient browser doesn't support JavaScript. You
+                            can download a new one
+                            <a href="http://mozilla.org/firefox">here</a>.
+                        </p>
+                    </noscript>
+                </div>
+                <div class="dropdown" id="dropdown">
+                    <img
+                        src="/assets/favicons/android.png"
+                        class="header-img"
+                        alt="Tools"
+                        id="tools"
+                    />
+                    <div id="dropdownContent" class="dropdown-content">
+                        <button onclick="edit()">Edit</button>
+                        <br />
+                        <button onclick="share()">Share</button>
+                        <br />
+                        <button onclick="downloadHTML()">Download HTML</button>
+                        <br />
+                        <button onclick="downloadJavaScript()">
+                            Download JavaScript
+                        </button>
+                        <br />
+                        <select id="instanceSelector"></select>
+                        <br /><br />
+                        <!-- extra padding to stop the cursor overshooting-->
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <hr>
-    <p>Today is a <strong>Sunday</strong>.</p>
-    <aside>
-        <p>Please note: thi<strong>s</strong> page is updated manually, and many n<strong>o</strong>t always be acc<strong>u</strong>rate. To u<strong>p</strong>date the day, please <a href onclick="edit()">edit this page</a>.</p>
-    </aside>
-    <p>To see what days it has previously been, read the <a href="archive/">Archive</a>.</p>
-    <p>You can now include Day in any website or program by calling the <a href="api.json">API</a>. It's just a static JSON file, so it also needs to be updated manually. Please make sure you also update the API when editing this page.</p>
-    <hr>
-    <a href="..">&lt; Things</a>
-</body>
+        </header>
+        <hr />
+        <p>Today is a <strong>Sunday</strong>.</p>
+        <aside>
+            <p>
+                Please note: thi<strong>s</strong> page is updated manually, and
+                many n<strong>o</strong>t always be acc<strong>u</strong>rate.
+                To u<strong>p</strong>date the day, please
+                <a href onclick="edit()">edit this page</a>.
+            </p>
+        </aside>
+        <p>
+            To see what days it has previously been, read the
+            <a href="archive/">Archive</a>.
+        </p>
+        <p>
+            You can now include Day in any website or program by calling the
+            <a href="api.json">API</a>. It's just a static JSON file, so it also
+            needs to be updated manually. Please make sure you also update the
+            API when editing this page.
+        </p>
+        <hr />
+        <a href="..">&lt; Things</a>
+    </body>
 </html>

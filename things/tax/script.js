@@ -7,13 +7,13 @@ function coins() {
 }
 
 function calculateTax(money) {
-    return (
-        ((money * (1 - taxRate)) < 250) ? (money * taxRate) : (money - 249)
-    );
+    return money * (1 - taxRate) < 250 ? money * taxRate : money - 249;
 }
 
 function richText() {
-    return `You currently have ${coins()} coins, which is too many. Press the button below to submit your tax returns and pay ${calculateTax(coins())} coins to the government.`;
+    return `You currently have ${coins()} coins, which is too many. Press the button below to submit your tax returns and pay ${calculateTax(
+        coins()
+    )} coins to the government.`;
 }
 
 function poorText() {
@@ -29,10 +29,10 @@ if (coins() >= 250) {
     button.disabled = true;
 }
 
-button.addEventListener("click", function() {
+button.addEventListener("click", function () {
     if (coins() >= 250) {
         localStorage.coins = coins() - calculateTax(coins());
         alert("Your tax has been paid successfully.");
     }
     location.reload();
-})
+});

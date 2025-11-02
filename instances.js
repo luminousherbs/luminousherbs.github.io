@@ -1,11 +1,10 @@
 export const instances = {
-
     "luminousherbs.github.io": {
         url: "http://luminousherbs.github.io",
         name: "GitHub",
         admin: "luminousherbs",
         source: "http://github.com/luminousherbs/luminousherbs.github.io",
-        edit: function(path) {
+        edit: function (path) {
             return `http://github.com/luminousherbs/luminousherbs.github.io/tree/main/${path}`;
         },
     },
@@ -15,7 +14,7 @@ export const instances = {
         name: "Codeberg",
         admin: "luminousherbs",
         source: "http://codeberg.org/luminousherbs/pages",
-        edit: function(path) {
+        edit: function (path) {
             return `http://codeberg.org/luminousherbs/pages/src/main/${path}`;
         },
     },
@@ -25,10 +24,9 @@ export const instances = {
         name: "Localhost",
         admin: null,
         source: "tools/",
-        edit: function(path) {
+        edit: function (path) {
             alert("just edit it yourself");
             return location.href;
         },
     },
-
-}
+};

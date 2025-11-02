@@ -1,7 +1,8 @@
 console.log(location.pathname);
 
 const scrollHeights = [];
-let finalState, initialState = {};
+let finalState,
+    initialState = {};
 let scrollTimer;
 
 function setValues() {
@@ -12,7 +13,7 @@ function setValues() {
     // calculateAcceleration();
 
     // wait 40ms, then declare scrolling to be over if the timer never got reset
-    scrollTimer = setTimeout(function() {
+    scrollTimer = setTimeout(function () {
         calculateSpeed();
         // calculateAcceleration();
     }, 40);
@@ -25,17 +26,22 @@ function calculateSpeed() {
         time: Date.now(),
     };
 
-    const speed = Math.floor((
-        (finalState.height - initialState.height) /
-        (finalState.time   - initialState.time  )
-    ) * 50);
+    const speed = Math.floor(
+        ((finalState.height - initialState.height) /
+            (finalState.time - initialState.time)) *
+            50
+    );
 
     finalState.speed = speed;
 
-    const acceleration = speed === 0 ? 0: (Math.floor((
-        (finalState.speed - initialState.speed) /
-        (finalState.time  - initialState.time )
-    ) * 50));
+    const acceleration =
+        speed === 0
+            ? 0
+            : Math.floor(
+                  ((finalState.speed - initialState.speed) /
+                      (finalState.time - initialState.time)) *
+                      50
+              );
 
     finalState.acceleration = acceleration;
 
@@ -58,6 +64,10 @@ function calculateSpeed() {
     // calculateAcceleration();
 }
 
-window.addEventListener("scroll", function() {
-    setValues();
-}, 1000)
+window.addEventListener(
+    "scroll",
+    function () {
+        setValues();
+    },
+    1000
+);

@@ -19,4 +19,5 @@ widthField.value = innerWidth * 0.7;
 heightField.value = innerHeight * 0.7;
 
 // trigger input
-onSource(); onSize();
+onSource();
+onSize();

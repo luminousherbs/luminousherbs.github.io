@@ -18,6 +18,12 @@
             rel="stylesheet"
         />
 
+        <style>
+            h1 {
+                font-weight: 400;
+            }
+        </style>
+
         <!-- favicons -->
         <link
             rel="icon"
@@ -63,14 +69,7 @@
         <header class="site-header">
             <div class="header-content">
                 <div class="header-text">
-                    <h1>Day</h1>
-                    <noscript>
-                        <p>
-                            Your ancient browser doesn't support JavaScript. You
-                            can download a new one
-                            <a href="http://mozilla.org/firefox">here</a>.
-                        </p>
-                    </noscript>
+                    <h1>Today is a <strong>Sunday</strong>.</h1>
                 </div>
                 <div class="dropdown" id="dropdown">
                     <img
@@ -98,13 +97,12 @@
             </div>
         </header>
         <hr />
-        <p>Today is a <strong>Sunday</strong>.</p>
         <aside>
             <p>
                 Please note: thi<strong>s</strong> page is updated manually, and
                 many n<strong>o</strong>t always be acc<strong>u</strong>rate.
                 To u<strong>p</strong>date the day, please
-                <a href onclick="edit()">edit this page</a>.
+                <a href="#" onclick="edit()">edit this page</a>.
             </p>
         </aside>
         <p>
@@ -112,7 +110,7 @@
             <a href="archive/">Archive</a>.
         </p>
         <p>
-            You can now include Day in any website or program by calling the
+            You can now use the current day in your program by calling the
             <a href="api.json">API</a>. It's just a static JSON file, so it also
             needs to be updated manually. Please make sure you also update the
             API when editing this page.

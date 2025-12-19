@@ -1,10 +1,10 @@
 console.log(location.pathname);
 
 // html elements
-birthdayField;
-earlierButton;
-laterButton;
-submitButton;
+const birthdayField = document.querySelector("#birthdayField");
+const earlierButton = document.querySelector("#earlierButton");
+const laterButton = document.querySelector("#laterButton");
+const submitButton = document.querySelector("#submitButton");
 
 let userLowerBound = -2208988800000;
 let userUpperBound = Date.now();

@@ -1,3 +1,5 @@
+import { randomInteger } from "/assets/scripts/random.js";
+
 console.log(location.pathname);
 
 const celsiusToDoneness = new Map([
@@ -88,14 +90,10 @@ function onDonenessInput() {
     }
 }
 
-function randomInteger(max) {
-    return Math.floor(Math.random() * max);
-}
-
 function randomPhoto() {
     submit.disabled = false;
     postgame.hidden = true;
-    imageIndex = randomInteger(10);
+    imageIndex = randomInteger(0, 10);
     image.src = `/assets/images/shifty${imageIndex}.jpg`;
 }
 

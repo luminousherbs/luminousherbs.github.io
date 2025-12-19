@@ -1,3 +1,5 @@
+import { randomItem, randomChance } from "/assets/scripts/random.js";
+
 // random filler phrases
 const fillers = [
     "Bad code only.",
@@ -15,13 +17,13 @@ const fillers = [
 ];
 
 export function randomPhrase() {
-    return fillers[Math.floor(Math.random() * fillers.length)];
+    return randomItem(fillers);
 }
 
 // weird closure shit
 function createIterator(list) {
     // shuffle list
-    const shuffled = list.sort(() => Math.random() - 0.5);
+    const shuffled = list.sort(() => (randomChance(0.5) ? 1 : -1));
     let index = 0;
     return function () {
         const item = shuffled[index];

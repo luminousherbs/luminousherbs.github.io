@@ -10,6 +10,13 @@
 
     <!-- feed -->
 
+        <item>
+      <title>Number of the Day</title>
+      <link>https://luminousherbs.github.io/things/number-of-the-day</link>
+      <pubDate>Fri, 19 Dec 2025 22:45:00 +0000</pubDate>
+      <guid>number-of-the-day</guid>
+    </item>
+
     <item>
       <title>Ten Years Ago</title>
       <link>https://luminousherbs.github.io/things/ten-years-ago</link>

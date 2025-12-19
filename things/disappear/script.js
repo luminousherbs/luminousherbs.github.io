@@ -7,6 +7,7 @@ let clock;
 function stopDeleting() {
     clearInterval(clock);
 }
+window.stopDeleting = stopDeleting;
 
 function button() {
     const newDiv = document.createElement("p");

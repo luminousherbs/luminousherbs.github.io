@@ -1,28 +1,38 @@
 console.log(location.pathname);
 
-const transliterationToActual = new Map([
-    ["ae", "ä"],
-    ["oe", "ö"],
-    ["ss", "ß"],
-    ["ue", "ü"],
-    ["AE", "Ä"],
-    ["OE", "Ö"],
-    ["UE", "Ü"],
-]);
+// const transliterationToActual = new Map([
+//     ["ae", "ä"],
+//     ["oe", "ö"],
+//     ["ss", "ß"],
+//     ["ue", "ü"],
+//     ["AE", "Ä"],
+//     ["OE", "Ö"],
+//     ["UE", "Ü"],
+// ]);
 
-function flipMap(map) {
-    const newMap = new Map();
-    for (const [key, value] of map) {
-        newMap.set(value, key);
+const transliterationToActual = {
+    ae: "ä",
+    oe: "ö",
+    ue: "ü",
+    ss: "ß",
+    AE: "Ä",
+    OE: "Ö",
+    UE: "Ü",
+};
+
+function flipObject(object) {
+    const flippedObject = {};
+    for (const [key, value] of Object.entries(object)) {
+        flippedObject[value] = key;
     }
-    return newMap;
+    return flippedObject;
 }
 
-function substitute(str, map) {
-    for (const [key, value] of map) {
-        str = str.replaceAll(key, value);
+function substitute(string, object) {
+    for (const [key, value] of Object.entries(object)) {
+        string = string.replaceAll(key, value);
     }
-    return str;
+    return string;
 }
 
 function onTransliterationInput() {
@@ -35,7 +45,7 @@ function onTransliterationInput() {
 function onActualInput() {
     transliterationField.value = substitute(
         actualField.value,
-        flipMap(transliterationToActual)
+        flipObject(transliterationToActual)
     );
 }
 

@@ -1,21 +1,25 @@
 console.log(location.pathname);
 
-const prices = new Map([
-    ["Strength Potion", 5],
-    ["Sword", 20],
-    ["Gem", 50],
-]);
+const prices = {
+    "Cool hat": 5,
+    "Cooler hat": 20,
+    "Coolest hat": 50,
+};
 
 function getCoins() {
-    return +localStorage.getItem("coins") ?? 0;
+    return +localStorage.coins || 0;
 }
+window.getCoins = getCoins;
 
 function buy(item) {
+    const price = prices[item];
     let coins = getCoins();
-    if (coins < prices.get(item)) return false;
-    coins -= prices.get(item);
+
+    if (coins < price) return false;
+
+    coins -= price;
     localStorage.setItem("coins", coins);
-    localStorage.setItem(item, Number(localStorage.getItem(item)) + 1);
+    localStorage.setItem(item, (+localStorage[item] || 0) + 1);
     updateDisplay();
 }
 window.buy = buy;
@@ -23,38 +27,45 @@ window.buy = buy;
 function updateDisplay() {
     output.innerText = `You have ${getCoins()} coins.`;
     itemsDisplay.innerHTML = "";
-    prices.forEach(function (value, key) {
+    for (const [key, value] of Object.entries(prices)) {
         // surely value and key are the wrong way round?
-        if (localStorage.getItem(key))
-            itemsDisplay.innerHTML += `${key}: ${localStorage.getItem(
-                key
-            )} <br>`;
-    });
+        const count = +localStorage[key] ?? 0;
+        if (count) itemsDisplay.innerHTML += `${key}: ${count}<br>`;
+    }
     updateAffordable();
 }
 window.updateDisplay = updateDisplay;
 
 function updateAffordable() {
-    prices.forEach(function (value, key) {
+    for (const [key, value] of Object.entries(prices)) {
+        console.log(value, value > getCoins());
         if (value > getCoins()) {
-            // special case where `getElementById` is required
-            document.getElementById(key).children[2].firstChild.disabled = true;
-        } else {
             // special case where `getElementById` is required
             document.getElementById(
                 key
             ).children[2].firstChild.disabled = false;
+            console.log(
+                document.getElementById(key),
+                document.getElementById(key).children,
+                document.getElementById(key).children[2],
+                document.getElementById(key).children[2].firstChild
+            );
+        } else {
+            // special case where `getElementById` is required
+            document.getElementById(key).children[2].firstChild.disabled = true;
         }
-    });
+    }
 }
 
-function addCoin() {
+function addCoins(number) {
     let coins = getCoins();
-    coins++;
-    localStorage.setItem("coins", coins);
+    coins += number;
+    localStorage.coins = coins;
     updateDisplay();
 }
 
 // define elementS
-getCoin.addEventListener("click", addCoin);
+getCoin.addEventListener("click", () => {
+    addCoins(1);
+});
 updateDisplay();

@@ -80,14 +80,18 @@ const lineEffects = {
 
 const defaultInput = `## Welcome to Markdown
 Your text can be *italic* or **bold** or ***both***, and you can format \`code\` as well.
-~~You can create lists and tables, too!~~ Lists and tables are not supported.
+~~You can create tables, too!~~ Tables are not supported.
 ### This is a subheading,
 And here are some horizontal lines:
 ---
 ---
 ---
 > This is a blockquote.
-You can also use ~subscript~ and ^superscript^.`;
+You can also use ~subscript~ and ^superscript^.
+A list looks like this:
+- 1
+- 2
+- 3`;
 
 function replaceToggleables(text) {
     // loop for each tag

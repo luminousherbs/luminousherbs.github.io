@@ -1,15 +1,5 @@
 console.log(location.pathname);
 
-// const transliterationToActual = new Map([
-//     ["ae", "ä"],
-//     ["oe", "ö"],
-//     ["ss", "ß"],
-//     ["ue", "ü"],
-//     ["AE", "Ä"],
-//     ["OE", "Ö"],
-//     ["UE", "Ü"],
-// ]);
-
 const transliterationToActual = {
     ae: "ä",
     oe: "ö",

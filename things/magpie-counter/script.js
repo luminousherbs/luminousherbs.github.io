@@ -1,30 +1,32 @@
 console.log(location.pathname);
 
-const magpieConversion = new Map([
-    [1, "sorrow"],
-    [2, "joy"],
-    [3, "a girl"],
-    [4, "a boy"],
-    [5, "silver"],
-    [6, "gold"],
-    [7, "a secret never to be told"],
-    [8, "a wish"],
-    [9, "a kiss"],
-    [10, "a surprise you should be careful not to miss"],
-    [11, "health"],
-    [12, "wealth"],
-    [13, "beware it's the devil himself"],
-]);
+const magpieConversion = {
+    1: "sorrow",
+    2: "joy",
+    3: "a girl",
+    4: "a boy",
+    5: "silver",
+    6: "gold",
+    7: "a secret never to be told",
+    8: "a wish",
+    9: "a kiss",
+    10: "a surprise you should be careful not to miss",
+    11: "health",
+    12: "wealth",
+    13: "beware it's the devil himself",
+};
 
-function flipMap(map) {
-    const newMap = new Map();
-    for (const [key, value] of map) {
-        newMap.set(value, key);
+function flipObject(object) {
+    const flippedObject = {};
+    for (const [key, value] of Object.entries(object)) {
+        flippedObject[value] = key;
     }
-    return newMap;
+    return flippedObject;
 }
 
 let lancashireMode = false;
+
+const numberConversion = flipObject(magpieConversion);
 
 function onNumberInput() {
     const value = +numberField.value;
@@ -40,8 +42,8 @@ function onNumberInput() {
 
     console.log(value);
 
-    const lowerValue = magpieConversion.get(floor);
-    const higherValue = magpieConversion.get(ceiling);
+    const lowerValue = magpieConversion[floor];
+    const higherValue = magpieConversion[ceiling];
 
     const lowerCharCount = Math.round(lowerValue.length * (1 - modulus));
     const higherCharCount = Math.round(higherValue.length * (1 - modulus));
@@ -56,7 +58,7 @@ function onNumberInput() {
 }
 
 function onWordInput() {
-    numberField.value = flipMap(magpieConversion).get(wordField.value) ?? "";
+    numberField.value = numberConversion[wordField.value ?? ""];
     // wordField.style.width = wordField.value.length * (34/48) + 1 + "ch";
 }
 

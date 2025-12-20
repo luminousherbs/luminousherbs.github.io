@@ -1,28 +1,82 @@
 console.log(location.pathname);
 
-const toggleables = new Map([
-    ["**", ["<strong>", "</strong>"]],
-    ["*", ["<em>", "</em>"]],
-    ["__", ["<strong>", "</strong>"]],
-    ["_", ["<em>", "</em>"]],
-    ["~~", ["<del>", "</del>"]],
-    ["~", ["<sub>", "</sub>"]],
-    ["^", ["<sup>", "</sup>"]],
-    ["```", ["<pre><code>", "</pre></code>"]],
-    ["`", ["<code>", "</code>"]],
-]);
+const toggleables = {
+    "**": {
+        opening: "<strong>",
+        closing: "</strong>",
+    },
+    "*": {
+        opening: "<em>",
+        closing: "</em>",
+    },
+    __: {
+        opening: "<strong>",
+        closing: "</strong>",
+    },
+    _: {
+        opening: "<em>",
+        closing: "</em>",
+    },
+    "~~": {
+        opening: "<del>",
+        closing: "</del>",
+    },
+    "~": {
+        opening: "<sub>",
+        closing: "</sub>",
+    },
+    "^": {
+        opening: "<sup>",
+        closing: "</sup>",
+    },
+    "```": {
+        opening: "<pre><code>",
+        closing: "</pre></code>",
+    },
+    "`": {
+        opening: "<code>",
+        closing: "</code>",
+    },
+};
 
-const lineEffects = new Map([
-    ["#", ["\n<h1>", "</h2>\n"]],
-    ["## ", ["\n<h2>", "</h2>\n"]],
-    ["### ", ["\n<h3>", "</h3>\n"]],
-    ["#### ", ["\n<h4>", "</h4>\n"]],
-    ["##### ", ["\n<h5>", "</h5>\n"]],
-    ["###### ", ["\n<h6>", "</h6>\n"]],
-    ["> ", ["\n<aside>", "</aside>\n"]],
-    ["- ", ["\n<li>", "</li>"]],
-    ["---", ["\n<hr>", ""]],
-]);
+const lineEffects = {
+    "#": {
+        opening: "\n<h1>",
+        closing: "</h1>\n",
+    },
+    "##": {
+        opening: "\n<h2>",
+        closing: "</h2>\n",
+    },
+    "###": {
+        opening: "\n<h3>",
+        closing: "</h3>\n",
+    },
+    "####": {
+        opening: "\n<h4>",
+        closing: "</h4>\n",
+    },
+    "#####": {
+        opening: "\n<h5>",
+        closing: "</h5>\n",
+    },
+    "######": {
+        opening: "\n<h6>",
+        closing: "</h6>\n",
+    },
+    "> ": {
+        opening: "\n<aside>",
+        closing: "</aside>\n",
+    },
+    "- ": {
+        opening: "\n<li>",
+        closing: "</li>",
+    },
+    "---": {
+        opening: "\n<hr>",
+        closing: "",
+    },
+};
 
 const defaultInput = `## Welcome to Markdown
 Your text can be *italic* or **bold** or ***both***, and you can format \`code\` as well.
@@ -37,19 +91,19 @@ You can also use ~subscript~ and ^superscript^.`;
 
 function replaceToggleables(text) {
     // loop for each tag
-    for (let t of toggleables.keys()) {
+    for (const [key, value] of Object.entries(toggleables)) {
         let opened = false;
         // while this markdown tag is still present,
-        while (text.includes(t)) {
+        while (text.includes(key)) {
             if (opened) {
                 // if the tag is already opened, replace the next markdown syntax with a html closing tag,
                 // e.g. replace * with </em>
-                text = text.replace(t, toggleables.get(t)[1]);
+                text = text.replace(key, value.closing);
                 opened = false;
             } else {
                 // if the tag isn't already opened, replace the next markdown syntax with a html opening tag,
                 // e.g. replace * with <em>
-                text = text.replace(t, toggleables.get(t)[0]);
+                text = text.replace(key, value.opening);
                 opened = true;
             }
         }
@@ -62,12 +116,10 @@ function replaceLineEffects(text) {
     let newText = "";
     for (let l of lines) {
         let newl = l;
-        for (let e of lineEffects.keys()) {
-            if (l.startsWith(e)) {
+        for (const [key, value] of Object.entries(lineEffects)) {
+            if (l.startsWith(key)) {
                 // surround the line with the relevant opening and closing tags
-                newl = `${lineEffects.get(e)[0]}${l.replace(e, "")}${
-                    lineEffects.get(e)[1]
-                }`;
+                newl = `${value.opening}${l.replace(key, "")}${value.closing}`;
             }
         }
         newText += newl;

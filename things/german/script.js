@@ -1,3 +1,5 @@
+import { flipObject, substitute } from "/assets/scripts/object.js";
+
 console.log(location.pathname);
 
 const transliterationToActual = {
@@ -9,21 +11,6 @@ const transliterationToActual = {
     OE: "Ö",
     UE: "Ü",
 };
-
-function flipObject(object) {
-    const flippedObject = {};
-    for (const [key, value] of Object.entries(object)) {
-        flippedObject[value] = key;
-    }
-    return flippedObject;
-}
-
-function substitute(string, object) {
-    for (const [key, value] of Object.entries(object)) {
-        string = string.replaceAll(key, value);
-    }
-    return string;
-}
 
 function onTransliterationInput() {
     actualField.value = substitute(

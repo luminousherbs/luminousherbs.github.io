@@ -1,3 +1,5 @@
+import { flipObject } from "/assets/scripts/object.js";
+
 console.log(location.pathname);
 
 const magpieConversion = {
@@ -16,17 +18,9 @@ const magpieConversion = {
     13: "beware it's the devil himself",
 };
 
-function flipObject(object) {
-    const flippedObject = {};
-    for (const [key, value] of Object.entries(object)) {
-        flippedObject[value] = key;
-    }
-    return flippedObject;
-}
+const numberConversion = flipObject(magpieConversion);
 
 let lancashireMode = false;
-
-const numberConversion = flipObject(magpieConversion);
 
 function onNumberInput() {
     const value = +numberField.value;
@@ -40,17 +34,16 @@ function onNumberInput() {
         return;
     }
 
-    console.log(value);
-
     const lowerValue = magpieConversion[floor];
     const higherValue = magpieConversion[ceiling];
+
+    if (!lowerValue || !higherValue) return;
 
     const lowerCharCount = Math.round(lowerValue.length * (1 - modulus));
     const higherCharCount = Math.round(higherValue.length * (1 - modulus));
 
     const lowerChars = lowerValue.slice(0, lowerCharCount);
     const higherChars = higherValue.slice(higherCharCount);
-    console.log(lowerChars, higherChars);
 
     wordField.value = lowerChars + higherChars ?? "";
 

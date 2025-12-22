@@ -1,4 +1,5 @@
 import { randomInteger } from "/assets/scripts/random.js";
+import { flipObject } from "/assets/scripts/object.js";
 import { answers } from "./answers.js";
 
 console.log(location.pathname);
@@ -14,14 +15,6 @@ const celsiusToDoneness = {
 };
 
 let imageIndex;
-
-function flipObject(object) {
-    const flippedObject = {};
-    for (const [key, value] of Object.entries(object)) {
-        flippedObject[value] = key;
-    }
-    return flippedObject;
-}
 
 function convertUsingLowerLimit(key, object) {
     key = Math.floor(key);

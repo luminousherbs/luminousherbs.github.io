@@ -2,6 +2,9 @@ import { flipObject } from "/assets/scripts/object.js";
 
 console.log(location.pathname);
 
+const numberField = document.querySelector("#number-field");
+const wordField = document.querySelector("#word-field");
+
 const magpieConversion = {
     1: "sorrow",
     2: "joy",
@@ -20,34 +23,43 @@ const magpieConversion = {
 
 const numberConversion = flipObject(magpieConversion);
 
-function onNumberInput() {
-    const value = +numberField.value;
+function getPhrase(number) {
+    const modulus = number % 1;
 
-    const floor = Math.floor(value);
-    const ceiling = Math.ceil(value);
-    const modulus = value % 1;
+    // quick exit for integers
+    if (!modulus) return magpieConversion[number] ?? "";
+
+    const floor = Math.floor(number);
+    const ceiling = Math.ceil(number);
 
     if (modulus >= 6 / 12 && modulus <= 7 / 12 && floor === 3) {
-        wordField.value = "a boy";
-        return;
+        return "a boy";
     }
 
-    const lowerValue = magpieConversion[floor];
-    const higherValue = magpieConversion[ceiling];
+    const lowerPhrase = magpieConversion[floor];
+    const upperPhrase = magpieConversion[ceiling];
 
-    if (!lowerValue || !higherValue) return;
+    if (!lowerPhrase || !upperPhrase) return;
 
-    const lowerCharCount = Math.round(lowerValue.length * (1 - modulus));
-    const higherCharCount = Math.round(higherValue.length * (1 - modulus));
+    // calculate how many characters are needed from each bound phrase
+    const lowerCharCount = Math.round(lowerPhrase.length * (1 - modulus));
+    const upperCharCount = Math.round(upperPhrase.length * (1 - modulus));
 
-    const lowerChars = lowerValue.slice(0, lowerCharCount);
-    const higherChars = higherValue.slice(higherCharCount);
+    const lowerChars = lowerPhrase.slice(0, lowerCharCount);
+    const higherChars = upperPhrase.slice(upperCharCount);
 
-    wordField.value = lowerChars + higherChars ?? "";
+    const phrase = lowerChars + higherChars;
+
+    return phrase ?? "";
+}
+
+function onNumberInput() {
+    const number = +numberField.value;
+    wordField.value = getPhrase(number);
 }
 
 function onWordInput() {
-    numberField.value = numberConversion[wordField.value ?? ""];
+    numberField.value = numberConversion[wordField.value] ?? "";
 }
 
 // listen for inputs

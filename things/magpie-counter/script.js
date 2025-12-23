@@ -20,8 +20,6 @@ const magpieConversion = {
 
 const numberConversion = flipObject(magpieConversion);
 
-let lancashireMode = false;
-
 function onNumberInput() {
     const value = +numberField.value;
 

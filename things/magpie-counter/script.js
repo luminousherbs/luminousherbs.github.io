@@ -1,4 +1,5 @@
 import { flipObject } from "/assets/scripts/object.js";
+import { ensureHorizontalSpace } from "/assets/scripts/resize.js";
 
 console.log(location.pathname);
 
@@ -56,10 +57,12 @@ function getPhrase(number) {
 function onNumberInput() {
     const number = +numberField.value;
     wordField.value = getPhrase(number);
+    ensureHorizontalSpace(wordField);
 }
 
 function onWordInput() {
     numberField.value = numberConversion[wordField.value] ?? "";
+    ensureHorizontalSpace(wordField);
 }
 
 // listen for inputs

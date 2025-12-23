@@ -1,61 +1,97 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- javascript -->
-    <script src="script.js" type="module" defer></script>
-    <script src="/assets/scripts/toolbar.js" type="module" defer></script>
-    <script src="/assets/scripts/tax.js" type="module" defer></script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- stylesheet and fonts -->
-    <link rel="stylesheet" href="../fancy.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+        <!-- javascript -->
+        <script src="script.js" type="module" defer></script>
+        <script src="/assets/scripts/toolbar.js" type="module" defer></script>
+        <script src="/assets/scripts/tax.js" type="module" defer></script>
 
-    <!-- favicons -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/default-32x32.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/default-16x16.png">
-    <link rel="shortcut icon" href="/assets/favicons/windows.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/ios.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/android.png">
+        <!-- stylesheet and fonts -->
+        <link rel="stylesheet" href="../fancy.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+            rel="stylesheet"
+        />
 
-    <!-- og (mastodon card) -->
-    <meta property="og:title" content="luminousherbs">
-    <meta property="og:description" content="A website by luminousherbs.">
-    <meta property="og:image" content="https://luminousherbs.github.io/">
-    <meta property="og:url" content="https://luminousherbs.github.io/">
-    <meta property="og:type" content="website">
-    
-    <title>luminousherbs</title>
-</head>
-<body>
-    <noscript>
-        <p>Your ancient browser doesn't support JavaScript. You can download a new one <a href="http://mozilla.org/firefox">here</a>.</p>
-    </noscript>
-    <header>
-        <h1>luminousherbs</h1>
-        <p>I make things online. Sometimes they're good.</p>
-        <button onclick="edit()">Edit</button>
-        <button onclick="share()">Share</button>
-        <button onclick="downloadHTML()">Download HTML</button>
-        <button onclick="downloadJavaScript()">Download JavaScript</button>
-        <br>
-        <p>Instance: <select id="instanceSelector"></select></p>
-    </header>
-    <hr>
-    <p>Welcome to my website. Here are some of the things on it: </p>
-    <ul>
-        <li><a href="oi/">oi</a>, a <a href="https://todepond.com/lab/login">Login</a> client which only displays the best 19% of the alphabet</li>
-        <li>All the small <a href="things/">things</a> I've made in JavaScript</li>
-        <li>The <a href="tools/">tools</a> I use to make the site</li>
-        <li><a href="music/">Music</a></li>
-        <li><a href="tests/">Tests</a></li>
-        <li>Other <a href="misc/">miscellaneous</a> pages</li>
-    </ul>
-    <hr>
-    <a href id="source">View source</a>
-</body>
+        <!-- favicons -->
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/assets/favicons/default-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/assets/favicons/default-16x16.png"
+        />
+        <link rel="shortcut icon" href="/assets/favicons/windows.ico" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/assets/favicons/ios.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="192x192"
+            href="/assets/favicons/maxres.png"
+        />
+
+        <!-- og (mastodon card) -->
+        <meta property="og:title" content="luminousherbs" />
+        <meta property="og:description" content="A website by luminousherbs." />
+        <meta property="og:image" content="https://luminousherbs.github.io/" />
+        <meta property="og:url" content="https://luminousherbs.github.io/" />
+        <meta property="og:type" content="website" />
+
+        <title>luminousherbs</title>
+    </head>
+    <body>
+        <noscript>
+            <p>
+                Your ancient browser doesn't support JavaScript. You can
+                download a new one
+                <a href="http://mozilla.org/firefox">here</a>.
+            </p>
+        </noscript>
+        <header>
+            <h1>luminousherbs</h1>
+            <p>I make things online. Sometimes they're good.</p>
+            <button onclick="edit()">Edit</button>
+            <button onclick="share()">Share</button>
+            <button onclick="downloadHTML()">Download HTML</button>
+            <button onclick="downloadJavaScript()">Download JavaScript</button>
+            <br />
+            <p>
+                Instance:
+                <select id="instanceSelector"></select>
+            </p>
+        </header>
+        <hr />
+        <p>Welcome to my website. Here are some of the things on it:</p>
+        <ul>
+            <li>
+                <a href="oi/">oi</a>, a
+                <a href="https://todepond.com/lab/login">Login</a> client which
+                only displays the best 19% of the alphabet
+            </li>
+            <li>
+                All the small <a href="things/">things</a> I've made in
+                JavaScript
+            </li>
+            <li>The <a href="tools/">tools</a> I use to make the site</li>
+            <li><a href="music/">Music</a></li>
+            <li><a href="tests/">Tests</a></li>
+            <li>Other <a href="misc/">miscellaneous</a> pages</li>
+        </ul>
+        <hr />
+        <a href id="source">View source</a>
+    </body>
 </html>

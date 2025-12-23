@@ -46,24 +46,12 @@ function onNumberInput() {
     const higherChars = higherValue.slice(higherCharCount);
 
     wordField.value = lowerChars + higherChars ?? "";
-
-    // wordField.style.width = wordField.value.length * (34/48) + 1 + "ch";
 }
 
 function onWordInput() {
     numberField.value = numberConversion[wordField.value ?? ""];
-    // wordField.style.width = wordField.value.length * (34/48) + 1 + "ch";
-}
-
-function onToggle() {
-    lancashireMode = !lancashireMode;
-    (numberField.value ? onNumberInput : onWordInput)();
 }
 
 // listen for inputs
 numberField.addEventListener("input", onNumberInput);
 wordField.addEventListener("input", onWordInput);
-lancashireModeField.addEventListener("input", onToggle);
-
-// update width
-// wordField.style.width = wordField.value.length + 1 + "ch";

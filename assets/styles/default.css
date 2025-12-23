@@ -157,7 +157,7 @@ h1 {
     font-size: 2.5rem;
     font-weight: 800;
     line-height: 1;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
 }
 
 h2 {
@@ -256,11 +256,15 @@ input {
     gap: 10px;
 }
 
+header {
+    margin-top: 1rem;
+}
+
 .header-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: -0.5em;
+    justify-content: center;
+    /* margin-bottom: -0.5em; */
 }
 
 .header-text {
@@ -269,8 +273,8 @@ input {
 
 .header-img {
     margin-left: 1rem;
-    width: 48px;
-    height: 48px;
+    height: 5rem;
+    aspect-ratio: 1;
 }
 
 .dropdown {
@@ -293,7 +297,7 @@ input {
     opacity: 0;
     position: absolute;
     overflow: hidden;
-    top: 50px;
+    /* top: 500px; */
     right: 0;
     padding-top: 0.5em;
     transition: all 100ms ease;

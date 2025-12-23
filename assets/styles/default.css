@@ -236,6 +236,7 @@ button:disabled {
 }
 
 input {
+    width: 10rem;
     font-family: Nunito Sans, sans-serif;
 }
 

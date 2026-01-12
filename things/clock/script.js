@@ -1,14 +1,18 @@
 console.log(location.pathname);
 
+const displayTime = document.querySelector("#display-time");
+const freezeButton = document.querySelector("#freeze-button");
+const displayFreezes = document.querySelector("#display-freezes");
+const freezeClickingButton = document.querySelector("#freeze-clicking-button");
+
 let count = 0;
 let clock;
-
 let frozen = false;
 let freezeCount = 0;
 let clickFrozen = false;
 let clickFrozenCount = false;
 
-function freeze() {
+window.freeze = function () {
     if (clickFrozen) return false;
 
     if (frozen) {
@@ -22,25 +26,25 @@ function freeze() {
 
         freezeCount++;
         displayFreezes.innerText = `You've frozen time ${freezeCount} times.`;
+        freezeClickingButton.hidden = false;
     }
 
     return true;
-}
-window.freeze = freeze;
+};
 
-function freezeClicking() {
+window.freezeClicking = function () {
     if (clickFrozen) return false;
 
     clickFrozen = true;
     freezeClickingButton.innerText = "Unfreeze clicking";
-    freezeClickingButton.disabled = true;
-    freezeButton.disabled = true;
-}
-window.freezeClicking = freezeClicking;
+    document
+        .querySelectorAll("button")
+        .forEach((button) => (button.disabled = true));
+};
 
 function tick() {
     count++;
-    displayTime.innerText = `You've been looking at this page for ${count} seconds.`;
+    displayTime.innerText = `You've been looking at this page for ${count >= 100000 ? `ages` : `${count} seconds`}.`;
 }
 
 function startClock() {

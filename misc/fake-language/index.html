@@ -1,255 +1,172 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+---
+title: JavaScript is a fake language
+tagline: Try to guess what these code snippets do.
+description: by luminousherbs
+layout: layouts/default.njk
+---
 
-        <!-- javascript -->
-        <script src="script.js" type="module" defer></script>
-        <script src="/assets/scripts/toolbar.js" type="module" defer></script>
-        <script src="/assets/scripts/tax.js" type="module" defer></script>
-
-        <!-- stylesheet and fonts -->
-        <link rel="stylesheet" href="/assets/styles/default.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-            rel="stylesheet"
-        />
-
-        <!-- favicons -->
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="800x800"
-            href="/assets/favicons/maxres.png"
-        />
-
-        <!-- og (mastodon card) -->
-        <meta property="og:title" content="JavaScript is a fake language" />
-        <meta property="og:description" content="A website by luminousherbs." />
-        <meta
-            property="og:image"
-            content="https://luminousherbs.github.io/things/og.png"
-        />
-        <meta
-            property="og:url"
-            content="https://luminousherbs.github.io/things/misc/fake-language"
-        />
-        <meta property="og:type" content="website" />
-
-        <title>JavaScript is a fake language</title>
-    </head>
-    <body>
-        <header class="site-header">
-            <div class="header-content">
-                <div class="header-text">
-                    <h1>JavaScript is a fake language</h1>
-                    <p>
-                        <strong
-                            >Try to guess what these code snippets do.</strong
-                        >
-                    </p>
-                    <noscript>
-                        <p>
-                            Your ancient browser doesn't support JavaScript. You
-                            can download a new one
-                            <a href="http://mozilla.org/firefox">here</a>.
-                        </p>
-                    </noscript>
-                </div>
-                <div class="dropdown" id="dropdown">
-                    <img
-                        src="/assets/favicons/maxres.png"
-                        class="header-img"
-                        alt="Tools"
-                        id="tools"
-                    />
-                    <div id="dropdownContent" class="dropdown-content">
-                        <button onclick="edit()">Edit</button>
-                        <br />
-                        <button onclick="share()">Share</button>
-                        <br />
-                        <button onclick="downloadHTML()">Download HTML</button>
-                        <br />
-                        <button onclick="downloadJavaScript()">
-                            Download JavaScript
-                        </button>
-                        <br />
-                        <select id="instanceSelector"></select>
-                        <br /><br />
-                        <!-- extra padding to stop the cursor overshooting-->
-                    </div>
-                </div>
-            </div>
-        </header>
-        <hr />
-
-        <textarea id="field0">
+<textarea id="field0">
 2 + "2"
     </textarea
-        >
-        <br />
-        <button onclick="alert(eval(field0.value))">Run</button>
-        <br />
-        <br />
+>
+<br />
+<button onclick="alert(eval(field0.value))">Run</button>
+<br />
+<br />
 
-        <textarea id="field1">
+<textarea id="field1">
 2 - - "2"
     </textarea
-        >
-        <br />
-        <button onclick="alert(eval(field1.value))">Run</button>
-        <br />
-        <br />
+>
+<br />
+<button onclick="alert(eval(field1.value))">Run</button>
+<br />
+<br />
 
-        <textarea id="field2">
+<textarea id="field2">
 NaN === NaN
     </textarea
-        >
-        <br />
-        <button onclick="alert(eval(field2.value))">Run</button>
-        <br />
-        <br />
+>
+<br />
+<button onclick="alert(eval(field2.value))">Run</button>
+<br />
+<br />
 
-        <textarea id="field8">
+<textarea id="field8">
 typeof NaN
     </textarea
-        >
-        <br />
-        <button onclick="alert(eval(field8.value))">Run</button>
-        <br />
-        <br />
+>
+<br />
+<button onclick="alert(eval(field8.value))">Run</button>
+<br />
+<br />
 
-        <textarea id="field3">
+<textarea id="field3">
 [] == []
     </textarea
-        >
-        <br />
-        <button onclick="alert(eval(field3.value))">Run</button>
-        <br />
-        <br />
+>
+<br />
+<button onclick="alert(eval(field3.value))">Run</button>
+<br />
+<br />
 
-        <textarea id="field4">
+<textarea id="field4">
 [] == ![]
     </textarea
-        >
-        <br />
-        <button onclick="alert(eval(field4.value))">Run</button>
-        <br />
-        <br />
+>
+<br />
+<button onclick="alert(eval(field4.value))">Run</button>
+<br />
+<br />
 
-        <textarea id="field5">
+<textarea id="field5">
 ![] == ![]
     </textarea
-        >
-        <br />
-        <button onclick="alert(eval(field5.value))">Run</button>
-        <br />
-        <br />
+>
+<br />
+<button onclick="alert(eval(field5.value))">Run</button>
+<br />
+<br />
 
-        <textarea id="field6">
+<textarea id="field6">
 Infinity.toLocaleString()
     </textarea
-        >
-        <br />
-        <button onclick="alert(eval(field6.value))">Run</button>
-        <br />
-        <br />
+>
+<br />
+<button onclick="alert(eval(field6.value))">Run</button>
+<br />
+<br />
 
-        <textarea id="field7">
+<textarea id="field7">
 (''+!+[])[+[]]
     </textarea
-        >
-        <br />
-        <button onclick="alert(eval(field7.value))">Run</button>
-        <br />
-        <br />
+>
+<br />
+<button onclick="alert(eval(field7.value))">Run</button>
+<br />
+<br />
 
-        <textarea id="field9" style="height: 220px">
+<textarea id="field9" style="height: 220px">
 (+(+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]+!![]))[((!![]+"")[+[]] + ((!![]+[][(![]+"")[+!![]] + (!![]+"")[+[]]])[+!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]]))+(""[(([]+{})[+!![]+ +!![]+ +!![]+ +!![]+ +!![]]) + ((!![]+[][(![]+"")[+!![]] + (!![]+"")[+[]]])[+!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]]) + ([][+[]]+"")[+!![]] + (![]+"")[+!![]+ +!![]+ +!![]] + (!![]+"")[+[]] + (!![]+"")[+!![]] + ([][+[]]+"")[+[]] + (([]+{})[+!![]+ +!![]+ +!![]+ +!![]+ +!![]]) + (!![]+"")[+[]] + ((!![]+[][(![]+"")[+!![]] + (!![]+"")[+[]]])[+!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]]) + (!![]+"")[+!![]]])[([][+[]]+"")[+!![]] + (![]+"")[+!![]] + ((+[])[(([]+{})[+!![]+ +!![]+ +!![]+ +!![]+ +!![]]) + ((!![]+[][(![]+"")[+!![]] + (!![]+"")[+[]]])[+!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]]) + ([][+[]]+"")[+!![]] + (![]+"")[+!![]+ +!![]+ +!![]] + (!![]+"")[+[]] + (!![]+"")[+!![]] + ([][+[]]+"")[+[]] + (([]+{})[+!![]+ +!![]+ +!![]+ +!![]+ +!![]]) + (!![]+"")[+[]] + ((!![]+[][(![]+"")[+!![]] + (!![]+"")[+[]]])[+!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]]) + (!![]+"")[+!![]]]+"")[+!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]] + (!![]+"")[+!![]+ +!![]+ +!![]]]](+!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![]+ +!![])[+!![]] 
     </textarea
-        >
-        <br />
-        <button onclick="alert(eval(field9.value))">Run</button>
-        <br />
-        <br />
+>
+<br />
+<button onclick="alert(eval(field9.value))">Run</button>
+<br />
+<br />
 
-        <textarea id="field61">
+<textarea id="field61">
 navigator.appName
     </textarea
-        >
-        <br />
-        <button onclick="alert(eval(field61.value))">Run</button>
-        <br />
-        <br />
+>
+<br />
+<button onclick="alert(eval(field61.value))">Run</button>
+<br />
+<br />
 
-        <textarea id="fieldbox">
+<textarea id="fieldbox">
 fieldbox.style.height = (1680549).toString(36)
     </textarea
-        >
-        <br />
-        <button onclick="alert(eval(fieldbox.value))">Run</button>
-        <br />
-        <br />
+>
+<br />
+<button onclick="alert(eval(fieldbox.value))">Run</button>
+<br />
+<br />
 
-        <textarea id="field314159">
+<textarea id="field314159">
 with(Math) alert(PI)
     </textarea
-        >
-        <br />
-        <button onclick="alert(eval(field314159.value))">Run</button>
-        <br />
-        <br />
+>
+<br />
+<button onclick="alert(eval(field314159.value))">Run</button>
+<br />
+<br />
 
-        <textarea id="field10">
+<textarea id="field10">
 3 > 2 > 1
     </textarea
-        >
-        <br />
-        <button onclick="alert(eval(field10.value))">Run</button>
-        <br />
-        <br />
+>
+<br />
+<button onclick="alert(eval(field10.value))">Run</button>
+<br />
+<br />
 
-        <textarea id="field11">
+<textarea id="field11">
 "Hello world";;;;;;;;;;;;;;;;;
     </textarea
-        >
-        <br />
-        <button onclick="alert(eval(field11.value))">Run</button>
-        <br />
-        <br />
+>
+<br />
+<button onclick="alert(eval(field11.value))">Run</button>
+<br />
+<br />
 
-        <textarea id="field12">
+<textarea id="field12">
 (10 ** 16) - 1 
     </textarea
-        >
-        <br />
-        <button onclick="alert(eval(field12.value))">Run</button>
-        <br />
-        <br />
+>
+<br />
+<button onclick="alert(eval(field12.value))">Run</button>
+<br />
+<br />
 
-        <textarea id="field13">
+<textarea id="field13">
 localStorage.setItem("test", 2);
 typeof localStorage.test;
     </textarea
-        >
-        <br />
-        <button onclick="alert(eval(field13.value))">Run</button>
-        <br />
-        <br />
+>
+<br />
+<button onclick="alert(eval(field13.value))">Run</button>
+<br />
+<br />
 
-        <textarea id="fieldInfinity">
+<textarea id="fieldInfinity">
 document.body.remove()
     </textarea
-        >
-        <br />
-        <button onclick="alert(eval(fieldInfinity.value))">Run</button>
-        <br />
-        <br />
+>
+<br />
+<button onclick="alert(eval(fieldInfinity.value))">Run</button>
+<br />
+<br />
 
-        <hr />
-        <a href="..">&lt; Miscellaneous</a>
-    </body>
-</html>
+<hr />
+<a href="..">&lt; Miscellaneous</a>

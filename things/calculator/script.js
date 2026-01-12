@@ -79,8 +79,8 @@ function convertWordToMath(words) {
             // break it into parts and add them.
             const parts = w.split("-");
             newWords.push(
-                convertWordToMath([parts[0]])[0] +
-                    +convertWordToMath([parts[1]])[0] ?? "?"
+                +convertWordToMath([parts[0]])[0] +
+                    +convertWordToMath([parts[1]])[0] ?? "?",
             );
 
             // if it ends in teen,
@@ -89,14 +89,14 @@ function convertWordToMath(words) {
             newWords.push(
                 "" +
                     (+convertWordToMath([w.replace("teen", "")])[0] - -10 ??
-                        "?")
+                        "?"),
             );
 
             // if it ends in ty,
         } else if (w.includes("ty")) {
             // get the entry for the base word and multiply by ten.
             newWords.push(
-                "" + (+convertWordToMath([w.replace("ty", "")])[0] * 10 ?? "?")
+                "" + (+convertWordToMath([w.replace("ty", "")])[0] * 10 ?? "?"),
             );
 
             // otherwise,
@@ -123,7 +123,7 @@ function convertMathToWord(math) {
             words.push(
                 convertMathToWord(["" + Math.floor(m / 10) * 10])[0] +
                     "-" +
-                    convertMathToWord(["" + (m % 10)])[0]
+                    convertMathToWord(["" + (m % 10)])[0],
             );
 
             // if it's between 13 and 19,
@@ -179,7 +179,7 @@ function onAnswerInput() {
     mathField.value = isNaN(+answerValue) ? "" : mathValue;
 
     const wordValue = convertMathToWord(
-        isNaN(+answerValue) ? [] : mathValue.split(" ")
+        isNaN(+answerValue) ? [] : mathValue.split(" "),
     ).join(" ");
     wordField.value = wordValue;
 }

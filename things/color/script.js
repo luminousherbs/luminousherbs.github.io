@@ -1,45 +1,63 @@
 console.log(location.pathname);
 
-// this code is so bad, don't even try to fix it
+const colors = ["red", "green", "blue"];
 
-function onInput() {
-    saveValues();
-    display.style.backgroundColor = `rgb(${slideRed.value}, ${slideGreen.value}, ${slideBlue.value})`;
+// html
+const numbers = {};
+const sliders = {};
 
-    numberRed.innerText = slideRed.value;
-    numberGreen.innerText = slideGreen.value;
-    numberBlue.innerText = slideBlue.value;
+colors.forEach((color) => {
+    numbers[color] = document.querySelector(`#number-${color}`);
+    sliders[color] = document.querySelector(`#slide-${color}`);
+    sliders[color].addEventListener("input", onInput);
+});
 
-    numberRed.style.backgroundColor = `rgb(${slideRed.value}, 0, 0)`;
-    numberGreen.style.backgroundColor = `rgb(0, ${slideGreen.value}, 0)`;
-    numberBlue.style.backgroundColor = `rgb(0, 0, ${slideBlue.value})`;
+function getRGBColor([red, green, blue]) {
+    return `rgb(${red}, ${green}, ${blue})`;
 }
 
-function saveValues() {
-    localStorage.red = slideRed.value;
-    localStorage.green = slideGreen.value;
-    localStorage.blue = slideBlue.value;
+function getColorChannel(channel, brightness) {
+    const colorValues = [0, 0, 0];
+    colorValues[colors.indexOf(channel)] = brightness;
+    return getRGBColor(colorValues);
+}
+
+function onInput() {
+    display.style.backgroundColor = getRGBColor([
+        sliders.red.value,
+        sliders.green.value,
+        sliders.blue.value,
+    ]);
+
+    colors.forEach((color) => {
+        localStorage[color] = sliders[color].value;
+        numbers[color].innerText = sliders[color].value;
+        numbers[color].style.backgroundColor = getColorChannel(
+            color,
+            sliders[color].value,
+        );
+    });
 }
 
 function loadValues() {
-    display.style.backgroundColor = `rgb(${localStorage.red}, ${localStorage.green}, ${localStorage.blue})`;
-    slideRed.value = numberRed.innerText = localStorage.red;
-    slideGreen.value = numberGreen.innerText = localStorage.green;
-    slideBlue.value = numberBlue.innerText = localStorage.blue;
+    display.style.backgroundColor = getRGBColor([
+        localStorage.red,
+        localStorage.green,
+        localStorage.blue,
+    ]);
 
-    numberRed.style.backgroundColor = `rgb(${localStorage.red}, 0, 0)`;
-    numberGreen.style.backgroundColor = `rgb(0, ${localStorage.green}, 0)`;
-    numberBlue.style.backgroundColor = `rgb(0, 0, ${localStorage.blue})`;
+    colors.forEach((color) => {
+        sliders[color].value = numbers[color].textContent = localStorage[color];
+        numbers[color].style.backgroundColor = getColorChannel(
+            color,
+            localStorage[color],
+        );
+    });
 }
 
-function copy() {
+window.copy = function () {
     navigator.clipboard.writeText(display.style.backgroundColor);
-}
-window.copy = copy;
-
-slideRed.addEventListener("input", onInput);
-slideGreen.addEventListener("input", onInput);
-slideBlue.addEventListener("input", onInput);
+};
 
 if (localStorage.red && localStorage.green && localStorage.blue) {
     loadValues();

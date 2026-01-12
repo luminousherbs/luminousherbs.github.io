@@ -26,7 +26,7 @@ export const instances = {
         source: "tools/",
         edit: function (path) {
             alert("just edit it yourself");
-            return location.href;
+            return null;
         },
     },
 };

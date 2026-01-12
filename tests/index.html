@@ -1,4 +1,85 @@
-here are the tests
-<link rel="stylesheet" href="/assets/styles/default.css">
-<input id="i">
-<button onclick="location.href += i.value">Go</button>
+<link rel="stylesheet" href="style.css" />
+<main>
+    <article>
+        <header>
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>luminousherbs</h1>
+                    <p>I make things online. Sometimes they're good.</p>
+                    <noscript>
+                        <p>
+                            Your ancient browser doesn't support JavaScript. You
+                            can download a new one
+                            <a href="http://mozilla.org/firefox">here</a>.
+                        </p>
+                    </noscript>
+                </div>
+                <div class="dropdown" id="dropdown">
+                    <img
+                        src="/assets/favicons/maxres.png"
+                        class="header-img"
+                        alt="Tools"
+                        id="tools"
+                    />
+            </div>
+        </header>
+        <hr />
+        <a href="..">&lt; back</a>
+    </article>
+
+    <div class="actions">
+        <button class="tool" onclick="edit()">Edit</button>
+        <button class="tool" onclick="share()" id="shareButton">Share</button>
+        <button class="tool" onclick="downloadJavaScript()">Download</button>
+    </div>
+</main>
+
+<!-- <body>
+        <header class="site-header">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>luminousherbs</h1>
+                    <p>
+                        <strong
+                            >I make things online. Sometimes they're
+                            good.</strong
+                        >
+                    </p>
+                    <noscript>
+                        <p>
+                            Your ancient browser doesn't support JavaScript. You
+                            can download a new one
+                            <a href="http://mozilla.org/firefox">here</a>.
+                        </p>
+                    </noscript>
+                </div>
+                <div class="dropdown" id="dropdown">
+                    <img
+                        src="/assets/favicons/maxres.png"
+                        class="header-img"
+                        alt="Tools"
+                        id="tools"
+                    />
+                    <div id="dropdownContent" class="dropdown-content">
+                        <button onclick="edit()">Edit</button>
+                        <br />
+                        <button onclick="share()">Share</button>
+                        <br />
+                        <button onclick="downloadHTML()">Download HTML</button>
+                        <br />
+                        <button onclick="downloadJavaScript()">
+                            Download JavaScript
+                        </button>
+                        <br />
+                        <select id="instanceSelector"></select>
+                        <br /><br />
+                    </div>
+                </div>
+            </div>
+        </header>
+        <hr />
+
+        <div id="feed" class="page-card-container"></div>
+        <hr />
+        <a href id="source">View source</a>
+    </body> -->

@@ -62,6 +62,13 @@ window.showAI = function () {
     modal.showModal();
 };
 
+window.oneWeirdTrick = function () {
+    modal.close();
+    document.querySelectorAll(".tool.ai").forEach((element) => {
+        element.disabled = true;
+    });
+};
+
 const firstPlaceholder = "Analyzing...";
 const placeholders = [
     "Creating propaganda...",

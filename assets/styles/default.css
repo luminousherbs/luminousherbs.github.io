@@ -1,5 +1,7 @@
 body {
-    font-family: Nunito Sans, sans-serif;
+    font-family:
+        Nunito Sans,
+        sans-serif;
     line-height: 1.5;
 }
 
@@ -144,9 +146,17 @@ main {
 }
 
 .tool.ai {
-    background: linear-gradient(90deg, #7ef984, #eb80d9) padding-box,
+    background:
+        linear-gradient(90deg, #7ef984, #eb80d9) padding-box,
         linear-gradient(90deg, #7ef984, #eb80d9) border-box;
     border: 2px solid transparent;
+}
+
+.tool.ai:disabled {
+    background: unset;
+    background-color: #444444;
+    border-color: #000000;
+    color: #cccccc;
 }
 
 .actions {
@@ -293,7 +303,9 @@ button:disabled {
 
 input {
     width: 10rem;
-    font-family: Nunito Sans, sans-serif;
+    font-family:
+        Nunito Sans,
+        sans-serif;
 }
 
 .page-card {

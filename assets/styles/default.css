@@ -369,6 +369,7 @@ dialog {
     border-radius: 16px;
     border: 2px #888888 solid;
     width: max(50%, 15em);
+    /* width: 50%; */
 
     /* position: fixed;
     left: 50%;

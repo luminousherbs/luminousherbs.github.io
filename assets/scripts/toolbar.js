@@ -36,26 +36,23 @@ function downloadFile(filepath) {
     document.body.removeChild(a);
 }
 
-function edit() {
+window.edit = function () {
     const destination = instances[rootUrl].edit(location.pathname);
     if (destination) location.href = destination;
-}
-window.edit = edit;
+};
 
-function share() {
+window.share = function () {
     try {
         navigator.share({ url: location.href });
     } catch (e) {
         navigator.clipboard.writeText(location.href);
         shareButton.innerText = "Copied!";
     }
-}
-window.share = share;
+};
 
-function downloadHTML() {
+window.downloadHTML = function () {
     downloadFile("index.html");
-}
-window.downloadHTML = downloadHTML;
+};
 
 window.downloadJavaScript = function () {
     downloadFile("script.js");
@@ -77,9 +74,9 @@ const placeholders = [
     "Training on your Facebook posts...",
 ];
 
-const message = `That's a great question—and one that really gets to the heart of what this is all about. You're not just interested—you're directly tapped in to the  Let's dive in.
-
-`;
+const message = document
+    .querySelector("#ai-response-content")
+    .innerHTML.replaceAll("\n", "");
 
 function addPlaceholder(placeholder) {
     const textElement = document.createElement("p");
@@ -119,7 +116,7 @@ document.querySelector("#ask-ai").addEventListener("submit", (event) => {
                 }
 
                 currentMessage += nextCharacter;
-                responseElement.textContent = currentMessage;
+                responseElement.innerHTML = currentMessage;
                 typingIndex++;
             }, 20);
         }

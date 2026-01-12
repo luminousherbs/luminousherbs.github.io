@@ -5,3 +5,7 @@ cold-day/
 technology/
 reader/
 sell-your-car/
+
+# eleventy
+_site
+node_modules

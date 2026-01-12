@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <!-- javascript -->
+        <script src="script.js" type="module" defer></script>
+        <script src="/assets/scripts/toolbar.js" type="module" defer></script>
+        <script src="/assets/scripts/tax.js" type="module" defer></script>
+
+        <!-- fonts don't matter -->
+        <!-- TODO: serve fonts not with google -->
+        <link rel="stylesheet" href="/assets/styles/default.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+            rel="stylesheet"
+        />
+
+        <!-- favicons -->
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="800x800"
+            href="/assets/favicons/maxres.png"
+        />
+
+        <!-- opengraph (og) card -->
+        <meta property="og:title" content="{{ title }}" />
+        <meta property="og:description" content="{{ description }}" />
+        <meta property="og:image" content="{{ image }}" />
+        <meta property="og:url" content="{{ path }}" />
+        <meta property="og:type" content="website" />
+
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <main>
+            <article>
+                <header>
+                    <div class="header-text">
+                        <h1>{{ title }}</h1>
+                        <p>
+                            <strong>{{ tagline | safe }}</strong>
+                        </p>
+                        <noscript>
+                            <p>
+                                Your ancient browser doesn't support JavaScript.
+                                You can download a new one
+                                <a href="http://mozilla.org/firefox">here</a>.
+                            </p>
+                        </noscript>
+                        <hr />
+                    </div>
+                </header>
+                {{ content | safe }}
+                <hr />
+                <a href="..">&lt; back</a>
+            </article>
+
+            <div class="actions">
+                <button class="tool" onclick="edit()">Edit</button>
+                <button class="tool" onclick="share()" id="shareButton">
+                    Share
+                </button>
+                <button class="tool" onclick="downloadJavaScript()">
+                    Download
+                </button>
+                <button class="tool ai" onclick="showAI()">Ask AI</button>
+            </div>
+        </main>
+
+        <dialog closedby="any">
+            <form class="dialog-content" id="ask-ai">
+                <h2>Ask anything about this page.</h2>
+                <input type="text" class="prompt" placeholder="Ask anything" />
+            </form>
+            <div id="thought"></div>
+        </dialog>
+
+        <template id="ai-response-content">
+            <p>
+                That's a great question—and one that really gets to the heart of
+                what this is all about. Let's dive in.
+            </p>
+            <aside>
+                Short answer: As an AI language model, I cannot do
+                <strong>anything useful</strong>.
+            </aside>
+            <p>Here's the breakdown:</p>
+            <ul>
+                <li>No</li>
+            </ul>
+        </template>
+    </body>
+</html>

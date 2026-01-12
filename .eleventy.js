@@ -1,4 +1,5 @@
 module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("assets");
-    eleventyConfig.addPassthroughCopy("**/feed.xml");
+    eleventyConfig.addPassthroughCopy("**.xml");
+    eleventyConfig.addPassthroughCopy("**.js");
 };

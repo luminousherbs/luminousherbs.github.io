@@ -3,7 +3,7 @@ import { randomInteger } from "/assets/scripts/random.js";
 console.log(location.pathname);
 
 // html elements
-const birthdayField = document.querySelector("#birthdayField");
+const birthdayField = document.querySelector("h1");
 const earlierButton = document.querySelector("#earlierButton");
 const laterButton = document.querySelector("#laterButton");
 const submitButton = document.querySelector("#submitButton");
@@ -19,7 +19,7 @@ function guessBirthday(lowerBound, upperBound) {
 
 function setGuess() {
     birthdayField.textContent = formatDate(
-        guessBirthday(userLowerBound, userUpperBound)
+        guessBirthday(userLowerBound, userUpperBound),
     );
 }
 
@@ -42,7 +42,7 @@ laterButton.addEventListener("click", function () {
 });
 
 submitButton.addEventListener("click", function () {
-    alert(`You were born on ${formatDate(guessedDate)}.`);
+    alert(`You are old`);
 });
 
 setGuess();

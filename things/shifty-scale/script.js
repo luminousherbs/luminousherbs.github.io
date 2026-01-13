@@ -32,7 +32,7 @@ function convertUsingLowerLimit(key, object) {
 function onTemperatureInput() {
     fieldDoneness.value = convertUsingLowerLimit(
         fieldTemperature.value,
-        celsiusToDoneness
+        celsiusToDoneness,
     );
     if (fieldDoneness.value == "blue") {
         document.body.style.color = "blue";
@@ -56,7 +56,7 @@ function randomPhoto() {
     submit.disabled = false;
     postgame.hidden = true;
     imageIndex = randomInteger(0, 10);
-    image.src = `/assets/images/shifty${imageIndex}.jpg`;
+    image.src = `https://codeberg.org/luminousherbs/images/raw/branch/main/images/shifty${imageIndex}.jpg`;
 }
 
 function onSubmit() {

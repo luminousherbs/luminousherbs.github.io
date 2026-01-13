@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+    <head>
+        {% include "layouts/default-head.njk" %}
+    </head>
+    <body>
+        <main>
+            <article>
+                <header>
+                    <div class="header-text">
+                        <h1>{{ title }}</h1>
+                        <p>
+                            <strong>{{ tagline | safe }}</strong>
+                        </p>
+                        <noscript>
+                            <p>
+                                Your ancient browser doesn't support JavaScript.
+                                You can download a new one
+                                <a href="http://mozilla.org/firefox">here</a>.
+                            </p>
+                        </noscript>
+                        <hr />
+                    </div>
+                </header>
+                {{ content | safe }}
+            </article>
+
+            <div class="actions">
+                <button class="tool" onclick="edit()">Edit</button>
+                <button class="tool" onclick="share()" id="shareButton">
+                    Share
+                </button>
+                <button class="tool" onclick="downloadJavaScript()">
+                    Download
+                </button>
+                <button class="tool ai" onclick="showAI()">Ask AI</button>
+            </div>
+        </main>
+
+        {% include "layouts/ai.njk" %}
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+    <head>
+        {% include "layouts/default-head.njk" %}
+    </head>
+    <body>
+        <main>
+            <article>
+                <header>
+                    <div class="header-text">
+                        <h1>{{ title }}</h1>
+                        <p>
+                            <strong>{{ tagline | safe }}</strong>
+                        </p>
+                    </div>
+                </header>
+                {{ content | safe }}
+
+                <a href="..">&lt; back</a>
+            </article>
+
+            <div class="actions">
+                <button class="tool" onclick="edit()">Edit</button>
+                <button class="tool" onclick="share()" id="shareButton">
+                    Share
+                </button>
+                <button class="tool" onclick="downloadJavaScript()">
+                    Download
+                </button>
+                <button class="tool ai" onclick="showAI()">Ask AI</button>
+            </div>
+        </main>
+
+        {% include "layouts/ai.njk" %}
+    </body>
+</html>

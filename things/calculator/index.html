@@ -1,129 +1,48 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+---
+title: Calculator
+description: what if calculator but worse?
+layout: layouts/minimal.njk
+---
 
-        <!-- javascript -->
-        <script src="script.js" type="module" defer></script>
-        <script src="/assets/scripts/toolbar.js" type="module" defer></script>
-        <script src="/assets/scripts/tax.js" type="module" defer></script>
+<style>
+    input {
+        width: 36ch;
+    }
+</style>
 
-        <!-- stylesheet and fonts -->
-        <link rel="stylesheet" href="/assets/styles/default.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-            rel="stylesheet"
-        />
-
-        <style>
-            input {
-                width: 36ch; /* arbitrary, fix soon with js? */
-            }
-        </style>
-
-        <!-- favicons -->
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="800x800"
-            href="/assets/favicons/maxres.png"
-        />
-
-        <!-- og (mastodon card) -->
-        <meta property="og:title" content="Calculator" />
-        <meta property="og:description" content="A website by luminousherbs." />
-        <meta
-            property="og:image"
-            content="https://luminousherbs.github.io/things/og.png"
-        />
-        <meta
-            property="og:url"
-            content="https://luminousherbs.github.io/things/calculator"
-        />
-        <meta property="og:type" content="website" />
-
-        <title>Calculator</title>
-    </head>
-    <body>
-        <header class="site-header">
-            <div class="header-content">
-                <div class="header-text">
-                    <h1>Calculator</h1>
-                    <noscript>
-                        <p>
-                            Your ancient browser doesn't support JavaScript. You
-                            can download a new one
-                            <a href="http://mozilla.org/firefox">here</a>.
-                        </p>
-                    </noscript>
-                </div>
-                <div class="dropdown" id="dropdown">
-                    <img
-                        src="/assets/favicons/maxres.png"
-                        class="header-img"
-                        alt="Tools"
-                        id="tools"
-                    />
-                    <div id="dropdownContent" class="dropdown-content">
-                        <button onclick="edit()">Edit</button>
-                        <br />
-                        <button onclick="share()">Share</button>
-                        <br />
-                        <button onclick="downloadHTML()">Download HTML</button>
-                        <br />
-                        <button onclick="downloadJavaScript()">
-                            Download JavaScript
-                        </button>
-                        <br />
-                        <select id="instanceSelector"></select>
-                        <br /><br />
-                        <!-- extra padding to stop the cursor overshooting-->
-                    </div>
-                </div>
-            </div>
-        </header>
-        <hr />
-        <table>
-            <tbody>
-                <tr>
-                    <td>
-                        <label for="wordField">Words: </label>
-                    </td>
-                    <td>
-                        <input
-                            type="text"
-                            id="wordField"
-                            value="twenty-two squared minus four cubed"
-                        /><br />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="mathField">Math: </label>
-                    </td>
-                    <td>
-                        <input
-                            type="text"
-                            id="mathField"
-                            value="22 ** 2 - 4 ** 3"
-                        /><br />
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="answerField">Answer: </label>
-                    </td>
-                    <td>
-                        <input type="text" id="answerField" value="420" /><br />
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-
-        <hr />
-        <a href="..">&lt; Things</a>
-    </body>
-</html>
+<br />
+<table>
+    <tbody>
+        <tr>
+            <td>
+                <label for="wordField">Words: </label>
+            </td>
+            <td>
+                <input
+                    type="text"
+                    id="wordField"
+                    value="twenty-two squared minus four cubed"
+                /><br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="mathField">Math: </label>
+            </td>
+            <td>
+                <input
+                    type="text"
+                    id="mathField"
+                    value="22 ** 2 - 4 ** 3"
+                /><br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="answerField">Answer: </label>
+            </td>
+            <td><input type="text" id="answerField" value="420" /><br /></td>
+        </tr>
+    </tbody>
+</table>
+<br />

@@ -1,0 +1,28 @@
+{
+  "name": "luminousherbs.github.io",
+  "version": "1.0.0",
+  "description": "[luminousherbs.github.io](\"https:///luminousherbs.github.io\") <br> [luminousherbs.codeberg.page](\"luminousherbs.codeberg.page\") <br> edit anything",
+  "main": "instances.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@codeberg.org:luminousherbs/pages.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.7.4",
+    "prettier-plugin-jinja-template": "^2.1.0"
+  }
+}

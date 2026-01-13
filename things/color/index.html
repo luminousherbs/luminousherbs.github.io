@@ -1,138 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+---
+title: Color Picker
+description: by luminousherbs
+layout: layouts/default.njk
+---
 
-        <!-- javascript -->
-        <script src="script.js" type="module" defer></script>
-        <script src="/assets/scripts/toolbar.js" type="module" defer></script>
-        <script src="/assets/scripts/tax.js" type="module" defer></script>
-
-        <!-- stylesheet and fonts -->
-        <link rel="stylesheet" href="/assets/styles/default.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
-            rel="stylesheet"
-        />
-
-        <!-- favicons -->
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="800x800"
-            href="/assets/favicons/maxres.png"
-        />
-
-        <!-- og (mastodon card) -->
-        <meta property="og:title" content="Color" />
-        <meta property="og:description" content="A website by luminousherbs." />
-        <meta
-            property="og:image"
-            content="https://luminousherbs.github.io/things/og.png"
-        />
-        <meta
-            property="og:url"
-            content="https://luminousherbs.github.io/things/things/color"
-        />
-        <meta property="og:type" content="website" />
-
-        <title>Color</title>
-    </head>
-    <body>
-        <header class="site-header">
-            <div class="header-content">
-                <div class="header-text">
-                    <h1>Color</h1>
-                    <noscript>
-                        <p>
-                            Your ancient browser doesn't support JavaScript. You
-                            can download a new one
-                            <a href="http://mozilla.org/firefox">here</a>.
-                        </p>
-                    </noscript>
-                </div>
-                <div class="dropdown" id="dropdown">
-                    <img
-                        src="/assets/favicons/maxres.png"
-                        class="header-img"
-                        alt="Tools"
-                        id="tools"
-                    />
-                    <div id="dropdownContent" class="dropdown-content">
-                        <button onclick="edit()">Edit</button>
-                        <br />
-                        <button onclick="share()">Share</button>
-                        <br />
-                        <button onclick="downloadHTML()">Download HTML</button>
-                        <br />
-                        <button onclick="downloadJavaScript()">
-                            Download JavaScript
-                        </button>
-                        <br />
-                        <select id="instanceSelector"></select>
-                        <br /><br />
-                        <!-- extra padding to stop the cursor overshooting-->
-                    </div>
-                </div>
-            </div>
-        </header>
-        <hr />
-
-        <table id="table">
-            <tbody>
-                <tr>
-                    <td>Red</td>
-                    <td>
-                        <input
-                            id="slideRed"
-                            type="range"
-                            min="0"
-                            max="255"
-                            value="126"
-                        />
-                    </td>
-                    <td id="numberRed">126</td>
-                </tr>
-                <tr>
-                    <td>Green</td>
-                    <td>
-                        <input
-                            id="slideGreen"
-                            type="range"
-                            min="0"
-                            max="255"
-                            value="249"
-                        />
-                    </td>
-                    <td id="numberGreen">249</td>
-                </tr>
-                <tr>
-                    <td>Blue</td>
-                    <td>
-                        <input
-                            id="slideBlue"
-                            type="range"
-                            min="0"
-                            max="255"
-                            value="132"
-                        />
-                    </td>
-                    <td id="numberBlue">132</td>
-                </tr>
-            </tbody>
-        </table>
-        <br />
-        <button
-            id="display"
-            style="height: 100px; width: 100px; border: none"
-            onclick="copy()"
-        >
-            Copy
-        </button>
-        <hr />
-        <a href="..">&lt; Things</a>
-    </body>
-</html>
+<br />
+<table id="table">
+    <tbody>
+        <tr>
+            <td>Red</td>
+            <td>
+                <input
+                    id="slide-red"
+                    type="range"
+                    min="0"
+                    max="255"
+                    value="126"
+                />
+            </td>
+            <td id="number-red">126</td>
+        </tr>
+        <tr>
+            <td>Green</td>
+            <td>
+                <input
+                    id="slide-green"
+                    type="range"
+                    min="0"
+                    max="255"
+                    value="249"
+                />
+            </td>
+            <td id="number-green">249</td>
+        </tr>
+        <tr>
+            <td>Blue</td>
+            <td>
+                <input
+                    id="slide-blue"
+                    type="range"
+                    min="0"
+                    max="255"
+                    value="132"
+                />
+            </td>
+            <td id="number-blue">132</td>
+        </tr>
+    </tbody>
+</table>
+<br />
+<button
+    id="display"
+    style="height: 100px; width: 100px; border: none"
+    onclick="copy()"
+>
+    Copy
+</button>
+<br /><br />
+<hr />
+<a href="..">&lt; Things</a>

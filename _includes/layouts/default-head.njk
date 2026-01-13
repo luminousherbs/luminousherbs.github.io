@@ -1,0 +1,36 @@
+<!-- metadata -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content="{{ eleventy.generator }}" />
+
+<!-- javascript -->
+<script src="script.js" type="module" defer></script>
+<script src="/assets/scripts/toolbar.js" type="module" defer></script>
+<script src="/assets/scripts/tax.js" type="module" defer></script>
+
+<!-- fonts don't matter -->
+<!-- TODO: serve fonts not with google -->
+<link rel="stylesheet" href="/assets/styles/default.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+    href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+    rel="stylesheet"
+/>
+
+<!-- favicons -->
+<link
+    rel="icon"
+    type="image/png"
+    sizes="800x800"
+    href="/assets/favicons/maxres.png"
+/>
+
+<!-- opengraph (og) card -->
+<meta property="og:title" content="{{ title }}" />
+<meta property="og:description" content="{{ description }}" />
+<meta property="og:image" content="{{ image }}" />
+<meta property="og:url" content="{{ path }}" />
+<meta property="og:type" content="website" />
+
+<title>{{ title }}</title>

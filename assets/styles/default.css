@@ -1,5 +1,7 @@
 body {
-    font-family: Nunito Sans, sans-serif;
+    font-family:
+        Nunito Sans,
+        sans-serif;
     line-height: 1.5;
 }
 
@@ -136,6 +138,69 @@ body {
     }
 }
 
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 0 auto;
+}
+
+.tool.ai {
+    background:
+        linear-gradient(90deg, #7ef984, #eb80d9) padding-box,
+        linear-gradient(90deg, #7ef984, #eb80d9) border-box;
+    border: 2px solid transparent;
+}
+
+.tool.ai:disabled {
+    background: unset;
+    background-color: #444444;
+    border-color: #000000;
+    color: #cccccc;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-top: 3rem;
+}
+
+/* mobile */
+@media (max-width: 500px) {
+    .actions {
+        justify-content: flex-end;
+    }
+
+    .tool {
+        text-align: right;
+        /* margin-left: 25%; */
+        width: 5rem;
+        align-self: flex-end;
+    }
+}
+
+/* desktop */
+@media (min-width: 500px) {
+    main {
+        grid-template-columns: 1fr auto;
+        align-items: start;
+        max-width: 50rem;
+    }
+
+    .tool {
+        text-align: left;
+    }
+
+    .actions {
+        justify-content: flex-start;
+    }
+
+    .content {
+        max-width: 40rem;
+    }
+}
+
 body {
     max-width: 50em;
     margin: 0 auto;
@@ -217,6 +282,7 @@ td {
 }
 
 button {
+    font-family: "Nunito Sans";
     color: #000000;
     background-color: #faec81;
     border-color: #c8bd67;
@@ -237,7 +303,9 @@ button:disabled {
 
 input {
     width: 10rem;
-    font-family: Nunito Sans, sans-serif;
+    font-family:
+        Nunito Sans,
+        sans-serif;
 }
 
 .page-card {
@@ -258,13 +326,9 @@ input {
 
 header {
     margin-top: 1rem;
-}
-
-.header-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* margin-bottom: -0.5em; */
 }
 
 .header-text {
@@ -280,10 +344,6 @@ header {
 .dropdown {
     position: relative;
     display: inline-block;
-}
-
-.tool {
-    width: auto;
 }
 
 .dropdown-content button {
@@ -307,4 +367,66 @@ header {
 .dropdown:focus-within .dropdown-content {
     visibility: visible;
     opacity: 1;
+}
+
+dialog::backdrop {
+    background: #00000080;
+    backdrop-filter: blur(5px);
+}
+
+dialog {
+    align-items: center;
+    background-color: #111111;
+    color: inherit;
+    border-radius: 16px;
+    border: 2px #888888 solid;
+    width: max(50%, 15em);
+    /* width: 50%; */
+
+    /* position: fixed;
+    left: 50%;
+    transform: translate(-50%, 0); */
+    transition: all 0.2s ease;
+}
+
+.dialog-content > h2 {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.dialog-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.prompt {
+    margin: auto;
+    background-color: #222222;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+
+    border-radius: 10000px;
+    font: inherit;
+    color: #ffffff;
+    outline: none;
+}
+
+.ai-placeholder {
+    color: #aaaaaa;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.slide-up {
+    margin-top: 1rem;
+    width: 90%;
 }

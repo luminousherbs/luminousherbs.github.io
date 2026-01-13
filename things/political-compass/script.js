@@ -18,49 +18,51 @@ const userScores = {
 };
 
 const spiritGangsters = {
-    "Lebron": {
-        image: "/assets/images/lebron.jpg"
+    Lebron: {
+        image: "https://codeberg.org/luminousherbs/images/raw/branch/main/images/lebron.jpg",
     },
     "The Ponderer": {
-        image: "/assets/images/the-ponderer.jpg"
+        image: "https://codeberg.org/luminousherbs/images/raw/branch/main/images/the-ponderer.jpg",
     },
-    "John": {
-        image: "/assets/images/john.jpg"
+    John: {
+        image: "https://codeberg.org/luminousherbs/images/raw/branch/main/images/john.jpg",
     },
-    "Craig": {
-        image: "/assets/images/craig.jpg"
+    Craig: {
+        image: "https://codeberg.org/luminousherbs/images/raw/branch/main/images/craig.jpg",
     },
-    "Derreck": {
-        image: "/assets/images/derreck.jpg"
+    Derreck: {
+        image: "https://codeberg.org/luminousherbs/images/raw/branch/main/images/derreck.jpg",
     },
     "Gregory II": {
-        image: "/assets/images/gregory-ii.jpg"
+        image: "https://codeberg.org/luminousherbs/images/raw/branch/main/images/gregory-ii.jpg",
     },
-    "Mark": {
-        image: "/assets/images/mark.jpg",
+    Mark: {
+        image: "https://codeberg.org/luminousherbs/images/raw/branch/main/images/mark.jpg",
     },
     "Adolf Sax": {
-        image: "/assets/images/adolf-sax.jpg"
+        image: "https://codeberg.org/luminousherbs/images/raw/branch/main/images/adolf-sax.jpg",
     },
     "Jack Saphone": {
-        image: "/assets/images/jack-saphone.jpg"
+        image: "https://codeberg.org/luminousherbs/images/raw/branch/main/images/jack-saphone.jpg",
     },
-    "Clumbus": {
-        image: "/assets/images/clumbus.jpg"
+    Clumbus: {
+        image: "https://codeberg.org/luminousherbs/images/raw/branch/main/images/clumbus.jpg",
     },
     "Dave from down the pub": {
-        image: "/assets/images/dave.jpg"
+        image: "https://codeberg.org/luminousherbs/images/raw/branch/main/images/dave.jpg",
     },
-    "Claire": {
-        image: "/assets/images/unnamed2.jpg"
+    Claire: {
+        image: "https://codeberg.org/luminousherbs/images/raw/branch/main/images/unnamed2.jpg",
     },
 };
 
 let questionIndex = 0;
 
-
 // html elements
-questionSpace; indicator; results; startButton;
+questionSpace;
+indicator;
+results;
+startButton;
 const rule = document.querySelectorAll("hr")[1];
 
 // functions
@@ -122,7 +124,6 @@ function getSpiritGangster(scores) {
         }
     }
 
-
     return {
         name: userGangster,
         image: spiritGangsters[userGangster].image,
@@ -145,10 +146,10 @@ function finish(scores) {
     // magic formulae
     // indicator.style.top = `${(scores.cool - 12) * (100 / -24)}%`;
     // indicator.style.left = `${(scores.mysterious + 14) * (100 / 28)}%`;
-    indicator.style.top = `${ 50 * (-scores.cool + bounds.cool) / bounds.cool }%`;
-    indicator.style.left = `${ 50 * (scores.mysterious + bounds.mysterious) / bounds.mysterious }%`;
-    musicalField.textContent = `${ Math.ceil(50 * (scores.musical + bounds.musical) / bounds.musical) }%`
-    
+    indicator.style.top = `${(50 * (-scores.cool + bounds.cool)) / bounds.cool}%`;
+    indicator.style.left = `${(50 * (scores.mysterious + bounds.mysterious)) / bounds.mysterious}%`;
+    musicalField.textContent = `${Math.ceil((50 * (scores.musical + bounds.musical)) / bounds.musical)}%`;
+
     const heading = document.createElement("h1");
     heading.textContent = "Quiz complete!";
     questionSpace.appendChild(heading);
@@ -159,10 +160,9 @@ function finish(scores) {
 }
 
 function createQuestion(details) {
-
     // clear the previous question
     questionSpace.innerHTML = "";
-    
+
     // create heading
     const heading = document.createElement("h1");
     heading.textContent = details.question;
@@ -175,7 +175,6 @@ function createQuestion(details) {
 
     // create option cards
     for (let o of details.options) {
-
         // create card
         const card = document.createElement("button");
         card.className = "card";
@@ -194,7 +193,7 @@ function createQuestion(details) {
         // handle select
         card.onclick = function () {
             // loop over each score
-            for (const key in o.scores) {;
+            for (const key in o.scores) {
                 userScores[key] += o.scores[key];
             }
 
